@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="vertical">
+
+        <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+            android:id="@+id/mm2_item_fm"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            app:sriv_left_top_corner_radius="10dip"
+            app:sriv_right_top_corner_radius="10dip" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:tint="@color/color_ffffff"
+            android:src="@mipmap/icon_video_play" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/shape_ffffff_20_b">
+
+            <com.yjfshop123.live.server.widget.CircleImageView
+                android:id="@+id/mm2_item_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/mm2_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="46dp"
+                android:textColor="@color/color_333333"
+                android:textSize="12sp" />
+
+        </FrameLayout>
+    </FrameLayout>
+
+    <View
+        android:id="@+id/mm2_item_bottom_b"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:visibility="gone" />
+
+</LinearLayout>

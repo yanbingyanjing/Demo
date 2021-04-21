@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_18181C"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/man"
+        android:text="@string/man"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:background="@color/color_1F1F23"
+
+        android:layout_height="1dp"/>
+    <TextView
+        android:id="@+id/woman"
+        android:text="@string/woman"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+
+        android:background="@color/color_1F1F23"
+
+        android:layout_height="8dp"/>
+    <TextView
+        android:id="@+id/cancel"
+        android:text="@string/btn_cancel"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.youth.banner.Banner
+        android:id="@+id/home_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:image_scale_type="center_crop"
+        app:indicator_drawable_selected="@color/color_style"
+        app:indicator_drawable_unselected="@color/white"
+        app:indicator_height="4dp"
+        app:indicator_margin="4dp"
+        app:indicator_width="10dp" />
+
+</LinearLayout>

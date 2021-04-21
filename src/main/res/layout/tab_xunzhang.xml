@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/one_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/one_left"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:background="@drawable/bg_yuandian" />
+
+        <TextView
+            android:id="@+id/one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="进行中"
+            android:textColor="@color/tab_xunzhang_tx"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/one_right"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="6dp"
+
+            android:background="@drawable/bg_yuandian" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/two_ll"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/two_left"
+            android:layout_width="4dp"
+
+            android:layout_height="4dp"
+            android:background="@drawable/bg_yuandian"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="结算中"
+            android:textColor="@color/tab_xunzhang_tx"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/two_right"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="6dp"
+
+            android:background="@drawable/bg_yuandian"
+
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/three_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/three_left"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:background="@drawable/bg_yuandian"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="已结清"
+            android:textColor="@color/tab_xunzhang_tx"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/three_right"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_yuandian"
+
+            android:visibility="invisible" />
+    </LinearLayout>
+
+</LinearLayout>

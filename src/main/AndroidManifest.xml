@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yjfshop123.live">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 获取机型信息权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 控制振动器 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 防止设备休眠 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <!-- 获取联系人信息，demo中演示发送通讯录消息 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!-- ********华为推送权限设置start******** -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <permission
+        android:name="com.yjfshop123.live.permission.PROCESS_PUSH_MSG"
+        android:protectionLevel="signatureOrSystem" />
+    <uses-permission android:name="com.yjfshop123.live.permission.PROCESS_PUSH_MSG" />
+    <!-- ********华为推送权限设置end******** -->
+    <!-- ********小米推送权限设置start******** -->
+    <permission
+        android:name="com.yjfshop123.live.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.yjfshop123.live.permission.MIPUSH_RECEIVE" />
+    <!-- ********小米推送权限设置end******** -->
+    <!-- ********魅族推送权限设置start******** -->
+    <!-- 兼容flyme5.0以下版本，魅族内部集成pushSDK必填，不然无法收到消息-->
+    <uses-permission android:name="com.meizu.flyme.push.permission.RECEIVE"></uses-permission>
+    <permission
+        android:name="com.yjfshop123.live.push.permission.MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.yjfshop123.live.push.permission.MESSAGE"></uses-permission>
+    <!--  兼容flyme3.0配置权限-->
+    <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE" />
+    <permission
+        android:name="com.yjfshop123.live.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"></permission>
+    <uses-permission android:name="com.yjfshop123.live.permission.C2D_MESSAGE" />
+    <!-- ********魅族推送权限设置end******** -->
+
+    <!--OPPO push-->
+    <uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE" />
+    <uses-permission android:name="com.heytap.mcs.permission.RECIEVE_MCS_MESSAGE" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
+<!--    <!— 可选 权限 游戏api功能 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.CALL_PHONE" />-->
+<!--    <uses-permission android:name="android.permission.CAMERA" />-->
+<!--    <uses-permission android:name="android.permission.VIBRATE" />-->
+<!--    <uses-permission android:name="android.permission.FLASHLIGHT" />-->
+
+<!--    <uses-feature android:name="android.hardware.camera" />-->
+<!--    <uses-feature android:name="android.hardware.camera.autofocus" />-->
+
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:name,android:icon, android:theme,android:allowBackup,android:networkSecurityConfig">
+
+
+        <!--梦工厂小游戏配置 开始部分，MGC_APPID 请到梦工厂小游戏平台上申请  -->
+        <!-- 刘海屏 适配  -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape"/>
+        <meta-data
+            android:name="MGC_APPID"
+            android:value="1002201" />
+        <!-- 渠道注册的微信分享APP1001646信息，请到微信开放平台注册申请 -->
+        <provider
+            android:name="com.mgc.leto.game.base.provider.LetoFileProvider"
+            android:authorities="com.yjfshop123.live.leto.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/leto_file_path"
+                tools:replace="android:resource"
+                />
+        </provider>
+        <!--梦工厂小游戏配置 结束部分 -->
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+            android:authorities="com.yjfshop123.live.TTFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+
+            android:authorities="com.yjfshop123.live.TTMultiProvider"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:theme="@style/MyTheme_Home"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="eepk8586" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.huawei.hms.hmsscankit.ScanKitActivity" />
+        <activity
+            android:name=".ui.activity.HomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc|fontScale"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home"
+            android:windowSoftInputMode="stateHidden|adjustPan|adjustResize" />
+
+        <activity
+            android:name=".ui.activity.LiveHomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".ui.activity.ChatHomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".video.activity.SmallVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".game.activity.GameHomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity android:name=".video.activity.PersonalDetailsActivity" />
+
+        <activity android:name=".video.activity.FansActivity" />
+
+        <activity android:name=".ui.activity.BackCallActivity" />
+
+        <activity android:name=".ui.activity.WhitePanelActivity" />
+
+        <activity android:name=".ui.activity.ChatPriceActivity" />
+
+        <activity android:name=".ui.activity.MyVideoActivity" />
+
+        <activity android:name=".ui.activity.MountActivity" />
+
+        <activity android:name=".ui.activity.ScreeningActivity" />
+
+        <activity
+            android:name=".message.ui.MessageListActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".ui.activity.XPicturePagerActivity" />
+
+        <activity
+            android:name=".ui.activity.RoomActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/MyTheme_Home"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <activity
+            android:name=".ui.activity.CallSettingActivity"
+            android:theme="@style/MyTheme_Home" />
+
+        <activity
+            android:name=".ui.activity.CallSettingActivity1v1"
+            android:theme="@style/MyTheme_Home" />
+
+        <activity android:name=".ui.activity.RewardActivity" />
+
+        <activity
+            android:name=".ui.activity.InducedActivity"
+            android:launchMode="singleTask" />
+
+        <activity android:name=".ui.activity.TaskLobbyActivity" />
+
+        <activity android:name=".ui.activity.OChatActivity" />
+
+        <activity android:name=".ui.activity.SearchActivity" />
+
+        <activity android:name=".ui.activity.SystemMessageActivity" />
+
+        <activity android:name=".ui.activity.XWebviewActivity">
+            <intent-filter>
+                <action android:name="io.xchat.intent.action.webview" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".ui.activity.GSYVideoActivity" />
+        <activity android:name=".ui.activity.CommunityMessageActivity" />
+        <activity android:name=".ui.activity.SearchCommunityActivity" />
+        <activity
+            android:name=".ui.activity.ReplyDialogActivity"
+            android:fitsSystemWindows="true"
+
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity android:name=".ui.activity.MMDetailsActivityNew" />
+        <activity android:name=".ui.activity.XAMapPreviewActivity" />
+        <activity android:name=".ui.activity.HtmlWebViewActivity" />
+        <activity android:name=".ui.activity.WanShanZhiLiaoActivity" />
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:theme="@style/MyTheme_Home"
+
+            />
+        <activity android:name=".ui.activity.AboutUsActivity" />
+        <activity android:name=".ui.activity.BindPhoneActivity" />
+        <activity android:name=".ui.activity.DaRenRenZhengActivity" />
+        <activity android:name=".ui.activity.JiaoYiRecodeActivity" />
+        <activity android:name=".ui.activity.MyAlbumActivity" />
+        <activity android:name=".ui.activity.MySignatureActivity" />
+        <activity android:name=".ui.activity.MyTagActivity1" />
+        <activity android:name=".ui.activity.MyWalletActivity1" />
+        <activity android:name=".ui.activity.VideoPreviewActivity" />
+        <activity android:name=".ui.activity.OnlineServiceActivity" />
+        <activity android:name=".ui.activity.PersonalInformationActivity" />
+        <activity android:name=".ui.activity.RechargeCentreActivity1" />
+        <activity android:name=".ui.activity.SettingActivity" />
+        <activity android:name=".ui.activity.ShiMingRenZhengActivity" />
+        <activity android:name=".ui.activity.TiXianActivity1" />
+        <activity android:name=".ui.activity.ShareActivity" />
+        <activity android:name=".ui.activity.VoiceJieShaoActivity" />
+        <activity android:name=".ui.activity.GZActivity" />
+        <activity android:name=".ui.activity.BindQQWXActivity" />
+        <activity android:name=".ui.activity.PayWebViewActivity" />
+        <activity android:name=".ui.activity.InComeDetailActivity" />
+        <activity android:name=".ui.activity.ExpenditureDetailActivity" />
+        <activity android:name=".ui.activity.WithdrawDetailActivity" />
+        <activity android:name=".ui.activity.SheQuPublishContentActivity" />
+        <activity android:name=".ui.activity.CommunityReplyListActivity" />
+        <activity android:name=".ui.activity.CommunityReplyDetailActivity" />
+        <activity android:name=".ui.activity.PostListActivity" />
+        <activity android:name=".ui.activity.ListActivity" />
+
+        <service
+            android:name=".service.RecordingService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:name="com.yjfshop123.video_shooting.activity.VideoAlbumActivity"
+            android:configChanges="keyboard|orientation|screenSize" />
+        <activity
+            android:name="com.yjfshop123.video_shooting.activity.VideoCameraActivity"
+            android:configChanges="keyboard|orientation|screenSize" />
+        <activity
+            android:name="com.yjfshop123.video_shooting.activity.TrimVideoActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name="com.yjfshop123.video_shooting.activity.XVideoCameraActivity"
+            android:configChanges="keyboard|orientation|screenSize" />
+
+        <!-- 高德地图 -->
+        <service android:name="com.amap.api.location.APSService"></service>
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="${mapAppkey}" />
+
+
+        <!-- 友盟 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="${umengAppkey}" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="official" />
+
+        <meta-data
+            android:name="com.shareinstall.APP_KEY"
+            android:value="${shareinstallAppkey}" />
+
+        <!--##########################################################################################云通信-->
+        <!-- Android 9.0兼容配置 -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <!--  消息收发 service -->
+        <!--<service
+            android:name="com.tencent.imsdk.session.remote.SessionService"
+            android:process=":network"/>-->
+        <!--  消息收发辅助 service -->
+        <!--<service
+            android:name="com.tencent.imsdk.session.remote.AssistService"
+            android:process=":network"/>
+        <service
+            android:name="com.tencent.imsdk.session.remote.KeepAliveJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":network"/>-->
+        <!--  离线消息广播接收器 -->
+        <!--<receiver android:name="com.tencent.imsdk.session.SessionBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.tencent.imsdk.session.boot" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>-->
+        <!--##########################################################################################云通信-->
+
+        <!-- 友盟 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent101830139" />
+            </intent-filter>
+        </activity>
+        <!--        <activity-->
+        <!--            android:name="com.tencent.connect.common.AssistActivity"-->
+        <!--            android:theme="@android:style/Theme.Translucent.NoTitleBar"-->
+        <!--            tools:replace="android:configChanges"-->
+        <!--            android:configChanges="orientation|keyboardHidden|screenSize"/>-->
+
+        <!-- 微信支付 -->
+        <!--<activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />-->
+
+        <!-- 分享 -->
+        <!--        <activity-->
+        <!--            android:name="com.umeng.socialize.media.WBShareCallBackActivity"-->
+        <!--            android:configChanges="keyboardHidden|orientation"-->
+        <!--            android:exported="false"-->
+        <!--            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+        <!--        <activity-->
+        <!--            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"-->
+        <!--            android:configChanges="keyboardHidden|orientation"-->
+        <!--            android:exported="false"-->
+        <!--            android:windowSoftInputMode="adjustResize" />-->
+        <!--        <activity-->
+        <!--            android:name="com.sina.weibo.sdk.share.WbShareTransActivity"-->
+        <!--            android:launchMode="singleTask"-->
+        <!--            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />-->
+        <!--                <category android:name="android.intent.category.DEFAULT" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+        <!--        <activity-->
+        <!--            android:name="com.umeng.facebook.FacebookActivity"-->
+        <!--            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
+        <!--            android:label="@string/app_name"-->
+        <!--            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="" />
+        <!-- 分享 -->
+        <!-- 友盟 -->
+
+        <!--push-->
+        <!--小米-->
+        <service
+            android:name="com.xiaomi.push.service.XMPushService"
+            android:enabled="true"
+            android:process=":pushservice" />
+        <service
+            android:name="com.xiaomi.push.service.XMJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":pushservice" />
+        <!--注：此 service 必须在小米推送 SDK3.0.1 版本以后（包括 3.0.1 版本）加入-->
+        <service
+            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="com.xiaomi.mipush.sdk.MessageHandleService"
+            android:enabled="true" />
+        <!--注：此 service 必须在小米推送 SDK2.2.5 版本以后（包括 2.2.5 版本）加入-->
+        <receiver
+            android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xiaomi.push.service.receivers.PingReceiver"
+            android:exported="false"
+            android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.xiaomi.push.PING_TIMER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.yjfshop123.live.MiPushMessageReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR" />
+            </intent-filter>
+        </receiver>
+
+        <!--华为-->
+        <receiver
+            android:name="com.huawei.android.pushagent.PushEventReceiver"
+            android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.huawei.android.push.intent.REFRESH_PUSH_CHANNEL" />
+                <action android:name="com.huawei.intent.action.PUSH" />
+                <action android:name="com.huawei.intent.action.PUSH_ON" />
+                <action android:name="com.huawei.android.push.PLUGIN" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.huawei.android.pushagent.PushBootReceiver"
+            android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.huawei.android.push.intent.REGISTER" />
+            </intent-filter>
+            <meta-data
+                android:name="CS_cloud_version"
+                android:value="\u0032\u0037\u0030\u0035" />
+        </receiver>
+        <!-- PushSDK:Push 服务 -->
+        <service
+            android:name="com.huawei.android.pushagent.PushService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":pushservice"></service>
+        <!-- 第三方相关 :接收 Push 消息（注册、Push 消息、Push 连接状态、标签，LBS 上报结果）广播 -->
+        <receiver android:name="com.yjfshop123.live.HwPushMessageReceiver">
+            <intent-filter>
+                <!-- 必须,用于接收 token-->
+                <action android:name="com.huawei.android.push.intent.REGISTRATION" />
+                <!-- 必须，用于接收消息-->
+                <action android:name="com.huawei.android.push.intent.RECEIVE" />
+                <!-- 可选，用于单击通知栏或通知栏上的按钮后触发 onEvent 回调-->
+                <action android:name="com.huawei.android.push.intent.CLICK" />
+                <!-- 可选，查看 push 通道是否连接，不查看则不需要-->
+                <action android:name="com.huawei.intent.action.PUSH_STATE" />
+                <!-- 可选，标签、地理位置上报回应，不上报则不需要 -->
+                <action android:name="com.huawei.android.push.plugin.RESPONSE" />
+            </intent-filter>
+            <meta-data
+                android:name="CS_cloud_ablitity"
+                android:value="successRateAnalytics" />
+        </receiver>
+
+        <!--mz push-->
+        <!-- push 应用定义消息 receiver 声明 -->
+        <receiver android:name="com.yjfshop123.live.MeizuPushMessageReceiver">
+            <intent-filter>
+                <!-- 接收 push 消息 -->
+                <action android:name="com.meizu.flyme.push.intent.MESSAGE" />
+                <!-- 接收 register 消息 -->
+                <action android:name="com.meizu.flyme.push.intent.REGISTER.FEEDBACK" />
+                <!-- 接收 unregister 消息-->
+                <action android:name="com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK" />
+                <!-- 兼容低版本 Flyme3 推送服务配置 -->
+                <action android:name="com.meizu.c2dm.intent.REGISTRATION" />
+                <action android:name="com.meizu.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.yjfshop123.live"></category>
+            </intent-filter>
+        </receiver>
+
+        <!--OPPO push-->
+        <service
+            android:name=".OPPOMessageService"
+            android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE">
+            <intent-filter>
+                <action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".OPPOAppPushMessageService"
+            android:permission="com.heytap.mcs.permission.SEND_MCS_MESSAGE">
+            <intent-filter>
+                <action android:name="com.heytap.mcs.action.RECEIVE_MCS_MESSAGE" />
+            </intent-filter>
+        </service>
+
+        <!--vivo push-->
+        <service
+            android:name="com.vivo.push.sdk.service.CommandClientService"
+            android:exported="true" />
+        <!--推送配置项-->
+        <!--appkey 审核通过要换-->
+        <meta-data
+            android:name="com.vivo.push.api_key"
+            android:value="${vivoAppKey}" />
+        <meta-data
+            android:name="com.vivo.push.app_id"
+            android:value="${vivoAppid}" />
+        <!-- push 应用定义消息 receiver 声明 -->
+        <receiver android:name=".PushMessageReceiverImpl">
+            <intent-filter>
+                <!-- 接收 push 消息 -->
+                <action android:name="com.vivo.pushclient.action.RECEIVE" />
+            </intent-filter>
+        </receiver>
+        <!--vivo push-->
+
+        <meta-data
+            android:name="CHANNEL_ID"
+            android:value="official" />
+
+        <meta-data
+            android:name="MI_BUSS_ID"
+            android:value="${miBussId}" />
+
+        <meta-data
+            android:name="HUAWEI_BUSS_ID"
+            android:value="${huaweiBussId}" />
+
+        <meta-data
+            android:name="MEIZU_BUSS_ID"
+            android:value="${meizuBussId}" />
+
+        <meta-data
+            android:name="VIVO_BUSS_ID"
+            android:value="${vivoBussId}" />
+
+        <meta-data
+            android:name="OPPO_BUSS_ID"
+            android:value="${oppoBussId}" />
+
+        <meta-data
+            android:name="MI_APPID"
+            android:value="\ ${miAppid}" />
+
+        <meta-data
+            android:name="MI_APPKEY"
+            android:value="\ ${miAppKey}" />
+
+        <meta-data
+            android:name="MEIZU_APPID"
+            android:value="\ ${meizuAppid}" />
+
+        <meta-data
+            android:name="MEIZU_KEY"
+            android:value="\ ${meizuKey}" />
+
+        <meta-data
+            android:name="OPPO_KEY"
+            android:value="\ ${oppoAppKey}" />
+
+        <meta-data
+            android:name="OPPO_SECRET"
+            android:value="\ ${oppoSecret}" />
+
+        <meta-data
+            android:name="HOME_TYPE"
+            android:value="${homeType}" />
+
+        <!--小视频拍摄-->
+        <activity
+            android:name=".video.VideoRecordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home" />
+        <activity
+            android:name=".video.VideoEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home" />
+        <activity
+            android:name=".video.VideoChooseActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home" />
+        <activity
+            android:name=".video.VideoPublishActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home" />
+
+        <!--直播-->
+        <activity
+            android:name=".live.live.play.TCLivePlayerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".live.live.play.TCVodPlayerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".live.live.push.camera.TCLivePublisherActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".live.live.push.screen.TCScreenRecordActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme_Home"
+            android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".live.live.push.screen.TCScreenRecordService"
+            android:enabled="true"
+            android:exported="false"></service>
+
+        <activity
+            android:name="com.tencent.rtmp.video.TXScreenCapture$TXScreenCaptureAssistantActivity"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity android:name=".ui.activity.PhoneRegisterActivity" />
+        <activity android:name=".ui.activity.AdvertActivity" />
+        <activity android:name=".ui.activity.ActivityNumActivity" />
+        <activity android:name=".ui.activity.ShouZhiAtivity" />
+        <activity android:name=".ui.activity.LevelActivity" />
+        <activity android:name=".ui.activity.GoldEggActivity" />
+        <activity android:name=".ui.activity.BadEggActivity" />
+        <activity android:name=".ui.activity.SilverEggActivity" />
+        <activity android:name=".ui.activity.TurnOutEggActivity" />
+        <activity android:name=".ui.activity.EggOrderListActivity" />
+        <activity android:name=".ui.activity.EggOrderDetailActivity" />
+        <activity android:name=".ui.activity.MedalingActivity" />
+        <activity android:name=".ui.activity.AdditionActivity" />
+        <activity android:name=".ui.activity.TargetRewardActivity" />
+        <activity android:name=".ui.activity.team.MyTeamActivity" />
+        <activity android:name=".ui.activity.team.MyNextTeamActivity" />
+        <activity android:name=".ui.activity.team.CityPartnerActivity" />
+        <activity android:name=".ui.activity.team.PartnerApplyActivity" />
+        <activity android:name=".ui.activity.team.ParTnerDetailActivity" />
+        <activity android:name=".ui.activity.OrderListActivity" />
+        <activity android:name=".ui.activity.team.PartnerMemberActivity" />
+        <activity android:name=".ui.activity.team.PartnerMemberDetailActivity" />
+        <activity android:name=".ui.activity.setting.ApplyUnsealingActivity" />
+        <activity android:name=".ui.activity.person.PersonNameFixActivity" />
+        <activity android:name=".ui.activity.ZhutuiActivity" />
+        <activity android:name=".ui.activity.TaskCenterActivity" />
+        <activity android:name=".ui.activity.MyMoreActivity" />
+        <activity android:name=".ui.activity.income.ZhuBoIncomeActivity" />
+        <activity android:name=".ui.activity.team.RebateActivity" />
+        <activity android:name=".ui.activity.ExchangeDownloadActivity" />
+        <activity android:name=".ui.activity.InviteFriendActivity" />
+        <activity android:name=".ui.activity.MsgActivity" />
+        <activity android:name=".ui.activity.TargetReciveDetailActivity" />
+        <activity android:name=".ui.activity.yinegg.NewSilverEggActivity" />
+        <activity android:name=".ui.activity.TargetRecordActivity" />
+        <activity android:name=".otc.ui.OtcGoldActivity" />
+        <activity android:name=".otc.ui.OrderConfirActivity" />
+        <activity android:name=".otc.ui.OrderDetailActivity" />
+        <activity android:name=".otc.ui.OrderPayActivity" />
+        <activity android:name=".otc.ui.OrderPayTypeSelectActivity" />
+        <activity android:name=".otc.ui.OrderRecieveTypeSelectActivity" />
+        <activity android:name=".otc.setshoukuan.SelectTypeActivity" />
+        <activity android:name=".otc.setshoukuan.BankSetActivity" />
+        <activity android:name=".otc.setshoukuan.AliSetActivity" />
+        <activity android:name=".otc.setshoukuan.WeixinSetActivity" />
+        <activity android:name=".otc.ui.OrderSellConfirActivity" />
+        <activity android:name=".otc.order.OrderManagerActivity" />
+        <activity android:name=".otc.order.OrderDetailOkOrCancelActivity" />
+        <activity android:name=".otc.order.OrderSellDetailActivity" />
+        <activity android:name=".ctc.weituo.WeiTuoListActivity" />
+        <activity android:name=".ctc.weituo.GuaOrderActivity" />
+        <activity android:name=".ctc.order.CtcBuyOrderDetailActivity" />
+        <activity android:name=".ctc.order.CrtcOrderPayActivity" />
+        <activity android:name=".ctc.order.CtcSellOrderDetailActivity" />
+        <activity android:name=".ctc.order.CtcOrderManagerActivity" />
+        <activity android:name=".ui.activity.person.FenSiActivity" />
+        <activity android:name=".ctc.weituo.GuaDanManagerActivity" />
+        <activity android:name=".otc.MainOtcActivity" />
+        <activity android:name=".ui.activity.yinegg.NewSilverListActivity" />
+        <activity android:name=".shop.ui.ShopDetailActivity" />
+        <activity android:name=".shop.ui.ShopByGoodActivity" />
+        <activity android:name=".otc.setshoukuan.UsdtSetActivity" />
+        <activity android:name=".xuanpin.ui.XuanPinActivity" />
+        <activity android:name=".shop.ui.SearchActivity" />
+        <activity android:name=".shop.ui.ZiyingActivity" />
+        <activity android:name=".shop.ui.ZiyingDetailActivity" />
+        <activity android:name=".ui.activity.TaskNewCenterActivity" />
+        <activity android:name=".taskcenter.SucaiActivity" />
+        <activity android:name=".taskcenter.UploadSucaiAcitivity" />
+        <activity android:name=".shop.ziying.ui.NewShopListActivity" />
+        <activity android:name=".shop.ziying.ui.NewShopDetailActivity" />
+        <activity android:name=".ui.activity.AdverActivityNew" />
+        <activity android:name=".shop.ziying.ui.SubmitBuyOrderActivity" />
+        <activity android:name=".shop.ziying.ui.AddressAddActivity" />
+        <activity android:name=".shop.ziying.ui.AddressListActivity" />
+        <activity android:name=".shop.ziying.ui.OrderListActivity" />
+        <activity android:name=".shop.ziying.ui.OrderDetailActivity" />
+        <activity android:name=".shop.ziying.ui.NewShopDetailXuanPinActivity" />
+        <activity android:name=".taskcenter.DangeSucaiActivity" />
+        <activity android:name=".ui.activity.yinegg.GoldPriceActivity" />
+        <activity android:name=".otc.CtcOtcOrderManagerActivity" />
+        <activity android:name=".shop.ziying.ui.WuliuActivity" />
+        <activity android:name=".shop.pintuan.PintuanListActivity" />
+        <activity android:name=".ui.activity.WebViewActivity" />
+        <activity android:name=".ui.activity.MyXuanPinActivity" />
+        <activity android:name=".ui.activity.CommunityReplyDetailActivityNew" />
+        <activity android:name=".ui.activity.HuodongCenterActivity" />
+        <activity android:name=".ui.activity.XinxiShangchuanActivity" />
+        <activity android:name=".ui.activity.TestH5Activity" />
+
+
+    </application>
+
+</manifest>

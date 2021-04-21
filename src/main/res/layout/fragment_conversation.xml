@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFDF8"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        />
+
+    <FrameLayout
+        android:id="@+id/h_4_top_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+     >
+        <ImageView
+            android:id="@+id/btn_left"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:scaleType="center"
+            android:onClick="onHeadLeftButtonClick"
+
+            android:src="@mipmap/black_back"
+            />
+        <ImageView
+            android:id="@+id/conversation_search"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:padding="15dp"
+            android:layout_marginEnd="60dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:layout_gravity="right"
+            android:src="@drawable/conversation_search" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/x_message"
+            android:textColor="@color/color_333333"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/conversation_dele"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_gravity="right"
+            android:background="@null"
+            android:scaleType="center"
+            android:src="@drawable/conversation_dele" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:visibility="gone"
+            android:background="@color/line_color" />
+    </FrameLayout>
+
+    <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+        android:id="@+id/conversation_swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/conversation_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+             />
+
+    </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+
+
+</LinearLayout>

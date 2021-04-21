@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+            android:id="@+id/mm_details_gift_iv"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center_vertical"
+            app:sriv_left_bottom_corner_radius="4dip"
+            app:sriv_left_top_corner_radius="4dip"
+            app:sriv_right_bottom_corner_radius="4dip"
+            app:sriv_right_top_corner_radius="4dip" />
+
+        <TextView
+            android:id="@+id/mm_details_gift_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/color_666666"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+</FrameLayout>

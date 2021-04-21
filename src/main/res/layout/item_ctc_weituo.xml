@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="16dp"
+    android:background="@drawable/bg_graditent_fdf7f1_fef3d5_8"
+    android:orientation="vertical"
+    android:paddingTop="6dp"
+    android:paddingBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.yjfshop123.live.server.widget.CircleImageView
+            android:id="@+id/head"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/splash_logo" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_weight="1"
+            android:textColor="@color/color_333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/has_deal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:textColor="@color/color_ACA698"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_2BB9955E" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="剩余数量(个):"
+            android:textColor="@color/color_ACA698"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_ACA698"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="单价(个):"
+            android:textColor="@color/color_ACA698"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¥"
+            android:textColor="@color/color_BA965C"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:textColor="@color/color_BA965C"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:visibility="gone"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="全部数量(个):"
+            android:textColor="@color/color_ACA698"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_ACA698"
+            android:textSize="12sp" />
+     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:visibility="invisible"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="限额:"
+            android:textColor="@color/color_ACA698"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/limit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_ACA698"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-3dp"
+        android:gravity="bottom"
+        android:layout_marginEnd="14dp"
+        android:layout_marginStart="16dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ali"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="10dp"
+            android:src="@mipmap/zhifubao"
+          />
+        <ImageView
+            android:id="@+id/wechat"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="10dp"
+            android:src="@mipmap/weixin"
+
+            />
+        <ImageView
+            android:id="@+id/bank"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="10dp"
+
+            android:src="@mipmap/hongse_bank"
+            android:scaleType="fitXY"
+
+            />
+        <ImageView
+            android:id="@+id/usdt"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@mipmap/usdt"
+            android:scaleType="fitXY"
+
+            />
+        <TextView
+            android:id="@+id/usdtTip"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:layout_marginStart="4dp"
+            android:text="USDT(ERC20)"
+
+            android:textColor="@color/color_ACA698"
+            android:textSize="12sp" />
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="1dp"/>
+        <TextView
+            android:id="@+id/cancel_btn"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_gradient_fae2ae_b28d51_21"
+            android:text="撤销"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"/>
+        <TextView
+            android:id="@+id/buy_sell_btn"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_gradient_fae2ae_b28d51_21"
+            android:text="@string/centee_foot_10"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"/>
+    </LinearLayout>
+</LinearLayout>

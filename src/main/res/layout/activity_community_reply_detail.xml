@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/allRootLayout"
+    android:layout_width="match_parent"
+    android:background="@color/color_FFFDF8"
+
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/headLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_FFFDF8">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:scaleType="center"
+                android:src="@drawable/head_back"
+                android:tint="@color/color_1E1E1E" />
+
+            <ImageView
+                android:id="@+id/moreOption"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:scaleType="center"
+                android:src="@drawable/ic_room_music_item_more"
+
+                android:tint="@color/color_1E1E1E" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/line_color" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/rootLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <com.yjfshop123.live.server.widget.CircleImageView
+                    android:id="@+id/userHeadImg"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/default_head"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/userHeadImg"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/userLay"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/userHeadName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text=""
+                                android:textColor="@color/color_3B3026"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/communitySex"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                android:src="@mipmap/boy" />
+
+                            <ImageView
+                                android:id="@+id/communityDaren"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:src="@mipmap/da" />
+
+                            <ImageView
+                                android:id="@+id/communityVip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:src="@drawable/community_vip" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/dateAndAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/userLay"
+                            android:layout_marginTop="6dp"
+                            android:text=""
+                            android:textColor="@color/color_858483"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/guanzhuImg"
+                        android:layout_width="45dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:scaleType="center"
+                        android:src="@drawable/forum_post_follow_ic" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <android.support.design.widget.CoordinatorLayout
+                android:id="@+id/coordinatorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.design.widget.AppBarLayout
+                    android:id="@+id/community_appbarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/color_FFFDF8"
+                    android:orientation="vertical"
+                    app:elevation="0dp">
+
+                    <android.support.design.widget.CollapsingToolbarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:contentScrim="@android:color/transparent"
+                        app:layout_scrollFlags="scroll">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/detail_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="15dp"
+                                android:lineSpacingMultiplier="1.2"
+                                android:text=""
+                                android:textColor="#3B3025"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/detail_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="11dp"
+                                android:layout_marginRight="15dp"
+                                android:lineSpacingMultiplier="1.2"
+                                android:text=""
+                                android:textColor="@color/color_858483"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone">
+
+                                <com.yjfshop123.live.utils.NoScrollGridView
+                                    android:id="@+id/photosList"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:focusable="false"
+                                    android:horizontalSpacing="10dp"
+                                    android:numColumns="3"
+
+                                    android:scrollbars="none"
+                                    android:verticalSpacing="10dp" />
+                            </LinearLayout>
+
+                            <!--一张图-->
+                            <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+                                android:id="@+id/community_item_img_"
+                                android:layout_width="160dp"
+                                android:layout_height="160dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="10dp"
+                                android:scaleType="centerCrop"
+                                android:visibility="gone"
+                                app:sriv_left_bottom_corner_radius="4dip"
+                                app:sriv_left_top_corner_radius="4dip"
+                                app:sriv_right_bottom_corner_radius="4dip"
+                                app:sriv_right_top_corner_radius="4dip" />
+
+                            <!--九宫格-->
+                            <LinearLayout
+                                android:id="@+id/community_item_img_ll"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="10dp"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+                                        android:id="@+id/community_item_img_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:scaleType="centerCrop"
+                                        app:sriv_left_bottom_corner_radius="4dip"
+                                        app:sriv_left_top_corner_radius="4dip"
+                                        app:sriv_right_bottom_corner_radius="4dip"
+                                        app:sriv_right_top_corner_radius="4dip" />
+
+                                    <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+                                        android:id="@+id/community_item_img_2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="6dp"
+                                        android:scaleType="centerCrop"
+                                        app:sriv_left_bottom_corner_radius="4dip"
+                                        app:sriv_left_top_corner_radius="4dip"
+                                        app:sriv_right_bottom_corner_radius="4dip"
+                                        app:sriv_right_top_corner_radius="4dip" />
+
+                                    <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+                                        android:id="@+id/community_item_img_3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="6dp"
+                                        android:scaleType="centerCrop"
+                                        android:visibility="visible"
+                                        app:sriv_left_bottom_corner_radius="4dip"
+                                        app:sriv_left_top_corner_radius="4dip"
+                                        app:sriv_right_bottom_corner_radius="4dip"
+                                        app:sriv_right_top_corner_radius="4dip" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+                                        android:id="@+id/community_item_img_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:scaleType="centerCrop"
+                                        app:sriv_left_bottom_corner_radius="4dip"
+                                        app:sriv_left_top_corner_radius="4dip"
+                                        app:sriv_right_bottom_corner_radius="4dip"
+                                        app:sriv_right_top_corner_radius="4dip" />
+
+                                    <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+                                        android:id="@+id/community_item_img_5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="6dp"
+                                        android:scaleType="centerCrop"
+                                        app:sriv_left_bottom_corner_radius="4dip"
+                                        app:sriv_left_top_corner_radius="4dip"
+                                        app:sriv_right_bottom_corner_radius="4dip"
+                                        app:sriv_right_top_corner_radius="4dip" />
+
+                                    <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+                                        android:id="@+id/community_item_img_6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="6dp"
+                                        android:scaleType="centerCrop"
+                                        android:visibility="visible"
+                                        app:sriv_left_bottom_corner_radius="4dip"
+                                        app:sriv_left_top_corner_radius="4dip"
+                                        app:sriv_right_bottom_corner_radius="4dip"
+                                        app:sriv_right_top_corner_radius="4dip" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+                                        android:id="@+id/community_item_img_7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:scaleType="centerCrop"
+                                        app:sriv_left_bottom_corner_radius="4dip"
+                                        app:sriv_left_top_corner_radius="4dip"
+                                        app:sriv_right_bottom_corner_radius="4dip"
+                                        app:sriv_right_top_corner_radius="4dip" />
+
+                                    <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+                                        android:id="@+id/community_item_img_8"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="6dp"
+                                        android:scaleType="centerCrop"
+                                        app:sriv_left_bottom_corner_radius="4dip"
+                                        app:sriv_left_top_corner_radius="4dip"
+                                        app:sriv_right_bottom_corner_radius="4dip"
+                                        app:sriv_right_top_corner_radius="4dip" />
+
+                                    <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+                                        android:id="@+id/community_item_img_9"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="6dp"
+                                        android:layout_marginTop="6dp"
+                                        android:scaleType="centerCrop"
+                                        android:visibility="visible"
+                                        app:sriv_left_bottom_corner_radius="4dip"
+                                        app:sriv_left_top_corner_radius="4dip"
+                                        app:sriv_right_bottom_corner_radius="4dip"
+                                        app:sriv_right_top_corner_radius="4dip" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/circleTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text=""
+                                android:textColor="@color/color_999999"
+                                android:textSize="11sp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/sendGift"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/shape_ffd100_20_textview"
+                                    android:drawableLeft="@drawable/personalhomepage_icon_gift"
+                                    android:drawablePadding="15dp"
+                                    android:gravity="center"
+                                    android:padding="10dp"
+                                    android:text="@string/gift_7"
+                                    android:textColor="@color/color_ffd100"
+                                    android:textSize="18sp" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="20dp"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="15dp"
+                                        android:text="@string/gift_8"
+                                        android:textColor="@color/color_000000"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="15dp"
+                                        android:text="@string/gift_9"
+                                        android:textColor="@color/color_999999"
+                                        android:textSize="15sp" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/huifuText1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="31dp"
+                                android:text="@string/reply_1"
+                                android:textColor="@color/color_000000"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                    </android.support.design.widget.CollapsingToolbarLayout>
+
+                </android.support.design.widget.AppBarLayout>
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:fillViewport="true"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+                        android:id="@+id/swipe_refresh"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/shimmer_recycler_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="50dp"
+                                android:visibility="visible"
+
+                                />
+
+                            <RelativeLayout
+                                android:id="@+id/noDataLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp"
+                                android:layout_marginTop="20dp"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/nodataImg"
+                                    android:layout_width="160dp"
+                                    android:layout_height="78dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@drawable/nodate" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/nodataImg"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
+                                    android:text="@string/reply_2"
+                                    android:textColor="@color/color_858483"
+                                    android:textSize="12sp" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+            </android.support.design.widget.CoordinatorLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/inputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@color/color_363636"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#e9e9e9" />
+
+            <!-- 输入框输入信息 -->
+            <RelativeLayout
+                android:id="@+id/optionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="105dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/shape_f5f5f5_20_button_input"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/huifuEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|left"
+                        android:layout_weight="2"
+                        android:background="@null"
+                        android:gravity="center|left"
+                        android:hint="@string/reply_3"
+                        android:paddingLeft="15dp"
+                        android:textColor="@color/color_000000"
+                        android:textColorHint="#a3a3a3"
+                        android:textCursorDrawable="@drawable/edittext_color"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/biaoqingImg"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="right|center"
+                        android:layout_weight="0.1"
+                        android:scaleType="center"
+                        android:src="@drawable/forum_create_post_send_smiley_g3_ic" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/sendMessage"
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/shape_a5a5a5_20_button"
+                    android:gravity="center"
+                    android:text="@string/rc_picsel_toolbar_send"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+            <!-- 默认显示状态 -->
+            <RelativeLayout
+                android:id="@+id/defalutLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/huifuText"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|left"
+                        android:layout_weight="5"
+
+                        android:gravity="center|left"
+                        android:hint="@string/reply_3"
+                        android:textColor="@color/color_000000"
+                        android:textColorHint="#848484"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/pinglunLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/msg" />
+
+                        <TextView
+                            android:id="@+id/huifuNum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/zanFrameLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/zanIcon"
+                            android:layout_width="23dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/zan_two" />
+
+                        <TextView
+                            android:id="@+id/zanNum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginStart="2dp"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sendGift1"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:background="@drawable/bg_gradient_fae2ae_b28d51_left_20"
+                    android:paddingStart="19dp"
+                    android:paddingEnd="9dp">
+
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="24dp"
+
+                        android:src="@mipmap/liwu_two" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <cn.jiguang.imui.chatinput.emoji.EmojiView
+                android:id="@+id/aurora_rl_emoji_container"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_gravity="bottom"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include layout="@layout/layout_common_empty" />
+</FrameLayout>

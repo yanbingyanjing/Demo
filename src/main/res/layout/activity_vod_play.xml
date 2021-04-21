@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/play_bb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/transparent"
+        android:onClick="onClick" />
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <include
+        android:id="@+id/layout_live_pusher_info"
+        layout="@layout/layout_live_pusher_info"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="45dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="00:00:00"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+
+            <SeekBar
+                android:id="@+id/seekbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:max="100"
+                android:maxHeight="1.6dp"
+                android:minHeight="1.6dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/video_seek_progress_"
+                android:thumb="@drawable/video_seek_thumb_" />
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="00:00:00"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/btn_vod_back"
+            android:layout_width="@dimen/live_btn_size"
+            android:layout_height="@dimen/live_btn_size"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/icon_live_close"
+            android:onClick="onClick" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_guard"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="67dp"
+        android:background="@drawable/bg_live_item2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/guard_icon" />
+
+        <TextView
+            android:id="@+id/guard_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/xwd"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@mipmap/icon_arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_votes"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="67dp"
+        android:background="@drawable/bg_live_item"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_jinbi"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/votes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@mipmap/icon_arrow_right" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_shop"
+        android:layout_width="@dimen/live_btn_size"
+        android:layout_height="@dimen/live_btn_size"
+        android:layout_gravity="bottom|right"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/icon_live_shop"
+        android:onClick="onClick"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/play_btn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:background="@mipmap/icon_video_play"
+        android:visibility="gone" />
+
+</FrameLayout>

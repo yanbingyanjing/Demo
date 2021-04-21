@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/dialog_c_video_report"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/service_dialog_top_bg"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_community_option_jubao"
+            android:textColor="@color/color_title_txt"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_c_video_block"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/linerlayout_water_sel"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拉黑"
+            android:textColor="@color/color_title_txt"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_select_del_video"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/linerlayout_water_sel"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除视频"
+            android:textColor="@color/color_title_txt"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_c_video_close"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/linerlayout_water_sel"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:textColor="@color/color_title_txt"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_0D0208"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginStart="30dp"-->
+<!--                android:layout_marginEnd="30dp"-->
+<!--                android:paddingTop="100dp"-->
+<!--                android:paddingBottom="30dp"-->
+<!--                android:src="@drawable/splash_bg" />-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FF191D26"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/splash_bg_new" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+android:visibility="gone"
+            >
+
+            <ImageView
+                android:id="@+id/splash_img"
+                android:layout_width="match_parent"
+                android:layout_height="214dp"
+                android:scaleType="fitXY"
+
+                android:src="@drawable/juxing" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:scaleType="fitXY"
+                    android:src="@drawable/splash_logo" />
+
+                <TextView
+                    android:id="@+id/one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/gongji_zhibo"
+                    android:textColor="@color/color_E2C68F"
+                    android:textSize="22sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/splash_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/splash_btn"
+        android:layout_width="62dp"
+        android:layout_height="26dp"
+
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_tiaoguo"
+        android:text="跳过"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone" />
+</RelativeLayout>

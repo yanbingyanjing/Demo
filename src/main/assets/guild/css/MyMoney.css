@@ -1,0 +1,74 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.contents{
+	width: 100%;
+	height: 13.34rem;
+	background-color: #fff;
+}
+.header{
+	background-image: linear-gradient(87deg,#fd7600 0%, #f85212 100%);
+	background-size:contain;
+	padding: 0.42rem 0.2rem;
+	display: flex;
+	justify-content: space-around;
+}
+.date{
+	width: 2.67rem;
+	height: 0.95rem;
+	color: #FFFFFF;
+	font-size: 0.34rem;
+	border-right: solid 0.02rem #fff;
+	float: left;
+}
+.date span{
+	font-size: 0.4rem;
+	padding-right: 0.4rem;
+	background: url(../image/date.png) no-repeat 100% 80%;
+	background-size: 13%;
+}
+input{
+	width: 2.87rem;
+	height: 0.95rem;
+	background: url(../image/date.png) no-repeat 90% 60%;
+	background-size: 9%;
+	/* float: left; */
+	margin-top: -0.4rem;
+	border: none;
+	background-color: transparent;
+	color: #FFFFFF;
+	margin: 0.08rem 0;
+	font-size: 0.3rem;
+	border-right: solid 0.02rem #fff;
+	
+}
+.IncomeMoney{
+	color: #FFFFFF;
+	font-size: 0.24rem;
+	text-align: center;
+	line-height: 0.5rem;
+}
+.IncomeMoney span{
+	font-size: 0.34rem;
+}
+.li{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: solid 0.01rem #F5F5F5;
+	padding: 0.2rem;
+}
+.liLeft-tit{
+	color: #353535;
+	font-size: 0.22rem;
+}
+.liLeft-time{
+	color: #afafaf;
+	font-size: 0.2rem;
+	line-height: 0.4rem;
+}
+.liRight{
+	font-size: 0.22rem;
+	color: #ff5519;
+	line-height: 0.6rem;
+}

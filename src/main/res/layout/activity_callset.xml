@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_000000">
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/txcloud_videoview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/btn_close"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:src="@drawable/call_icon_2"
+        android:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/btn_save"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:padding="8dp"
+        android:src="@drawable/call_icon_1"
+        android:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/btn_beauty"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/callset_beauty" />
+
+</FrameLayout>

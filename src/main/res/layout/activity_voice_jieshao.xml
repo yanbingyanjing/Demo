@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/voice_bg"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="@string/voice_title"
+        android:textColor="@color/color_ffffff"
+        android:textSize="19sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/dialog_bg"
+        android:clipChildren="false"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/voiceTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:text="@string/voice_desc"
+            android:textColor="@color/color_000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/playFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/voiceTxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="54dp"
+            android:text="@string/voice_pre"
+            android:textColor="@color/color_000000" />
+
+        <Chronometer
+            android:id="@+id/record_audio_chronometer_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playFlag"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/playLayout"
+            android:layout_width="match_parent"
+            android:layout_height="102dp"
+            android:layout_below="@+id/record_audio_chronometer_time"
+            android:clipChildren="false"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <SeekBar
+                android:id="@+id/playSeekBar"
+                style="@style/Widget.SeekBar.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="29dp"
+                android:layout_marginRight="25dp"
+                android:clickable="false"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/currentSecond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textSize="7sp" />
+
+                <TextView
+                    android:id="@+id/totalMinute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="00:00"
+                    android:textSize="7sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/record_audio_fab_record"
+            android:layout_width="102dp"
+            android:layout_height="102dp"
+            android:layout_below="@+id/record_audio_chronometer_time"
+            android:scaleType="center"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/voice_pre"
+            android:visibility="visible"/>
+
+        <RelativeLayout
+            android:id="@+id/optionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="102dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/record_audio_chronometer_time"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/resetAudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/voice_reset" />
+
+            <ImageView
+                android:id="@+id/playAudio"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/voice_play" />
+
+            <ImageView
+                android:id="@+id/saveAudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                android:src="@drawable/voice_save" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

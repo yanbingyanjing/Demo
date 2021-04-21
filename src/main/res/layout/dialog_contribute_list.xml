@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/service_dialog_top_bg"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/dialog_contribute_weeks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contribution_2"
+                android:textColor="@color/color_333333"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/dialog_contribute_weeks_v"
+                android:layout_width="30dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/color_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialog_contribute_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contribution_1"
+                android:textColor="@color/color_333333"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/dialog_contribute_month_v"
+                android:layout_width="30dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/color_style"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray2" />
+
+    <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/shimmer_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                 />
+
+            <TextView
+                android:id="@+id/dialog_contribute_list_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/nodata_1"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </FrameLayout>
+
+    </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+
+
+</LinearLayout>

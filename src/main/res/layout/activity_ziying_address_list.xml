@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/status_bar_view"
+        android:layout_width="match_parent"        android:background="@color/white"
+
+        android:layout_height="22dp"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/layout_head"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_below="@+id/status_bar_view"
+
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_left"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:onClick="onHeadLeftButtonClick"
+            android:scaleType="center"
+
+            android:src="@mipmap/black_back" />
+
+        <TextView
+            android:id="@+id/tv_title_center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:text="@string/shouhuo_address"
+            android:textColor="@color/color_333333"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/refrash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+
+
+                android:layout_marginBottom="80dp" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        <include layout="@layout/layout_common_empty" />
+        <TextView
+            android:id="@+id/add_address"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="26dp"
+            android:background="@drawable/bg_red_color_20"
+
+            android:text="@string/xinzeng_address" />
+    </RelativeLayout>
+
+</LinearLayout>

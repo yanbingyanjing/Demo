@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/color_FFFDF8"
+    android:layout_height="match_parent">
+    <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/allDetailHeader"
+        android:background="@color/color_theme"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/shimmer_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp" />
+
+
+    </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/viewEmpty"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/imgEmpty"
+            android:layout_width="160dp"
+            android:layout_height="78dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/nodate" />
+
+        <TextView
+            android:id="@+id/tvEmtyHit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgEmpty"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginTop="11.0dip"
+            android:layout_marginRight="15.0dip"
+            android:gravity="center"
+            android:text="@string/nodata_1"
+            android:textColor="@color/color_content_txt"
+            android:textSize="12dp" />
+    </RelativeLayout>
+</RelativeLayout>

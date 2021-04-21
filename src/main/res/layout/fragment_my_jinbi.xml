@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_theme"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:id="@+id/tvTotalAibi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@drawable/recharge_icon_aibi"
+            android:drawablePadding="15dp"
+            android:textColor="@color/color_title_txt"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvRatio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTotalAibi"
+            android:layout_centerHorizontal="true"
+            android:text="@string/jb_hint_8"
+            android:textColor="@color/color_content_txt"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="19.5dp"
+        android:paddingBottom="15.5dp">
+
+        <TextView
+            android:id="@+id/tvRecharge"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="33.5dp"
+            android:layout_marginRight="33.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_ffd100_20_button"
+            android:gravity="center"
+            android:text="@string/jb_hint_9"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/splitView"
+            android:layout_width="1.0px"
+            android:layout_height="15.5dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@color/line_color"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvWithdraw"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="33.5dp"
+            android:layout_marginRight="33.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_55e5e5e5_20_button"
+            android:gravity="center"
+            android:text="@string/tixian_shenqing"
+            android:textColor="@color/color_title_txt"
+            android:textSize="14sp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/viewComeInDetail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/wallet_icon_profit"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="@string/jb_hint_10"
+            android:textColor="@color/color_title_txt"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/comeInTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:text=""
+            android:textColor="@color/color_content_txt"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvComeInDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:drawableRight="@drawable/forward"
+            android:drawablePadding="10dp"
+            android:textColor="@color/color_content_txt"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/viewComeOutDetail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/wallet_icon_expenditure"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="@string/jb_hint_11"
+            android:textColor="@color/color_title_txt"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/comeOutTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:text=""
+            android:textColor="@color/color_content_txt"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvComeOutDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:drawableRight="@drawable/forward"
+            android:drawablePadding="10dp"
+            android:textColor="@color/color_content_txt"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/viewWithdrawDetail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/wallet_icon__withdrawals"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="@string/jb_hint_12"
+            android:textColor="@color/color_title_txt"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/withdrawTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:text=""
+            android:textColor="@color/color_content_txt"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvWithdrawDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:drawableRight="@drawable/forward"
+            android:drawablePadding="10dp"
+            android:textColor="@color/color_content_txt"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_gravity="bottom"
+        android:background="@color/line_color" />
+
+</LinearLayout>

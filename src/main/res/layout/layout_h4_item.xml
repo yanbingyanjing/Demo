@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/h4_item_top"
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/bg_graditent_fdf7f1_fee8d5_top_9" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/bg_graditent_fdf7f1_fee8d5">
+
+        <TextView
+            android:id="@+id/h4_item_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/color_CEAF82"
+            android:textSize="18dp"
+            android:textStyle="italic" />
+
+        <com.yjfshop123.live.server.widget.CircleImageView
+            android:id="@+id/h4_item_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="50dp"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="110dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/h4_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_CEAF82"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/h4_item_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/_mm_details_01"
+                android:drawableLeft="@drawable/male_icon"
+                android:gravity="center"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text=" 0"
+                android:textColor="@color/color_CEAF82"
+                android:textSize="9dp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/h4_item_describe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/color_CEAF82"
+            android:textSize="12dp" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/h4_item_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/bg_graditent_fdf7f1_fee8d5_bottom_9" />
+
+    <View
+        android:id="@+id/h4_item_bottom_b"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="@drawable/bg_graditent_fdf7f1_fee8d5"
+        android:visibility="gone" />
+
+</LinearLayout>

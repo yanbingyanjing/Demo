@@ -1,0 +1,304 @@
+package com.yjfshop123.live.live.live.common.utils;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.text.InputFilter;
+import android.text.InputType;
+import android.text.TextUtils;
+import android.util.TypedValue;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.yjfshop123.live.R;
+import com.yjfshop123.live.utils.CommonUtils;
+
+public class DialogUitl {
+
+    public static final int INPUT_TYPE_TEXT = 0;
+    public static final int INPUT_TYPE_NUMBER = 1;
+    public static final int INPUT_TYPE_NUMBER_PASSWORD = 2;
+    public static final int INPUT_TYPE_TEXT_PASSWORD = 3;
+
+    public static void showSimpleInputDialog(Context context, String title, String hint, int inputType, int length,
+                                             boolean isBackgroundDimEnabled, SimpleCallback callback) {
+        new Builder(context).setTitle(title)
+                .setCancelable(true)
+                .setInput(true)
+                .setHint(hint)
+                .setInputType(inputType)
+                .setLength(length)
+                .setClickCallback(callback)
+                .setBackgroundDimEnabled(isBackgroundDimEnabled)
+                .build()
+                .show();
+    }
+
+    public static void showSimpleInputDialog(Context context, String title, int inputType, int length, boolean isBackgroundDimEnabled, SimpleCallback callback) {
+        showSimpleInputDialog(context, title, null, inputType, length, isBackgroundDimEnabled, callback);
+    }
+
+    public static void showSimpleHintDialog(Context context, String title, String content,
+                                            boolean isBackgroundDimEnabled, SimpleCallback callback) {
+        new Builder(context).setTitle(title)
+                .setCancelable(true)
+                .setInput(false)
+                .setContent(content)
+                .setConfrimString(context.getString(R.string.dialog_reload))
+                .setClickCallback(callback)
+                .setBackgroundDimEnabled(isBackgroundDimEnabled)
+                .build()
+                .show();
+    }
+
+    public static Dialog showSimpleHintDialog(Context context, String title, String confrim, String cancel, String content,
+                                            boolean isBackgroundDimEnabled, boolean isCancelable, SimpleCallback2 callback) {
+        Dialog dialog = new Builder(context).setTitle(title)
+                .setCancelable(isCancelable)
+                .setInput(false)
+                .setContent(content)
+                .setConfrimString(confrim)
+                .setCancelString(cancel)
+                .setClickCallback(callback)
+                .setBackgroundDimEnabled(isBackgroundDimEnabled)
+                .build();
+                dialog.show();
+        return dialog;
+    }
+
+    public static void showSimpleDialog(Context context, String content, SimpleCallback callback) {
+        showSimpleDialog(context, content, true, callback);
+    }
+
+    public static void showSimpleDialog(Context context, String content, boolean cancelable, SimpleCallback callback) {
+        showSimpleDialog(context, null, content, cancelable, callback);
+    }
+
+    public static void showSimpleDialog(Context context, String title, String content, boolean cancelable, SimpleCallback callback) {
+        new Builder(context)
+                .setTitle(title)
+                .setContent(content)
+                .setCancelable(cancelable)
+                .setClickCallback(callback)
+                .build()
+                .show();
+    }
+
+
+    public interface SimpleCallback {
+        void onConfirmClick(Dialog dialog, String content);
+    }
+
+    public interface SimpleCallback2 extends SimpleCallback {
+        void onCancelClick();
+    }
+
+    public static class Builder {
+
+        private Context mContext;
+        private String mTitle;
+        private String mContent;
+        private String mConfrimString;
+        private String mCancelString;
+        private boolean mCancelable;
+        private boolean mBackgroundDimEnabled=true;//显示区域以外是否使用黑色半透明背景
+        private boolean mInput;//是否是输入框的
+        private String mHint;
+        private int mInputType;
+        private int mLength;
+        private SimpleCallback mClickCallback;
+
+        public Builder(Context context) {
+            mContext = context;
+        }
+
+        public Builder setTitle(String title) {
+            mTitle = title;
+            return this;
+        }
+
+        public Builder setContent(String content) {
+            mContent = content;
+            return this;
+        }
+
+        public Builder setConfrimString(String confrimString) {
+            mConfrimString = confrimString;
+            return this;
+        }
+
+        public Builder setCancelString(String cancelString) {
+            mCancelString = cancelString;
+            return this;
+        }
+
+        public Builder setCancelable(boolean cancelable) {
+            mCancelable = cancelable;
+            return this;
+        }
+
+        public Builder setBackgroundDimEnabled(boolean backgroundDimEnabled) {
+            mBackgroundDimEnabled = backgroundDimEnabled;
+            return this;
+        }
+
+        public Builder setInput(boolean input) {
+            mInput = input;
+            return this;
+        }
+
+        public Builder setHint(String hint) {
+            mHint = hint;
+            return this;
+        }
+
+        public Builder setInputType(int inputType) {
+            mInputType = inputType;
+            return this;
+        }
+
+        public Builder setLength(int length) {
+            mLength = length;
+            return this;
+        }
+
+        public Builder setClickCallback(SimpleCallback clickCallback) {
+            mClickCallback = clickCallback;
+            return this;
+        }
+
+        public Dialog build() {
+            final Dialog dialog = new Dialog(mContext, mBackgroundDimEnabled ? R.style.BottomDialog : R.style.BottomDialog2);
+            dialog.setContentView(mInput ? R.layout.dialog_input : R.layout.dialog_simple);
+            dialog.setCancelable(mCancelable);
+            dialog.setCanceledOnTouchOutside(mCancelable);
+            TextView titleView = (TextView) dialog.findViewById(R.id.title);
+            if (!TextUtils.isEmpty(mTitle)) {
+                titleView.setText(mTitle);
+            }
+            final TextView content = (TextView) dialog.findViewById(R.id.content);
+            if (!TextUtils.isEmpty(mHint)) {
+                content.setHint(mHint);
+            }
+            if (!TextUtils.isEmpty(mContent)) {
+                content.setText(mContent);
+            }
+            if (mInputType == INPUT_TYPE_NUMBER) {
+                content.setInputType(InputType.TYPE_CLASS_NUMBER);
+            } else if (mInputType == INPUT_TYPE_NUMBER_PASSWORD) {
+                content.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+            } else if (mInputType == INPUT_TYPE_TEXT_PASSWORD) {
+                content.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            }
+            if (mLength > 0 && content instanceof EditText) {
+                content.setFilters(new InputFilter[]{new InputFilter.LengthFilter(mLength)});
+            }
+            TextView btnConfirm = (TextView) dialog.findViewById(R.id.btn_confirm);
+            if (!TextUtils.isEmpty(mConfrimString)) {
+                btnConfirm.setText(mConfrimString);
+            }
+            TextView btnCancel = (TextView) dialog.findViewById(R.id.btn_cancel);
+            if (!TextUtils.isEmpty(mCancelString)) {
+                btnCancel.setText(mCancelString);
+            }
+            View.OnClickListener listener = new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (v.getId() == R.id.btn_confirm) {
+                        if (mClickCallback != null) {
+                            if (mInput) {
+                                mClickCallback.onConfirmClick(dialog, content.getText().toString());
+                            } else {
+                                dialog.dismiss();
+                                mClickCallback.onConfirmClick(dialog, "");
+                            }
+                        } else {
+                            dialog.dismiss();
+                        }
+                    } else {
+                        dialog.dismiss();
+                        if (mClickCallback instanceof SimpleCallback2) {
+                            ((SimpleCallback2) mClickCallback).onCancelClick();
+                        }
+                    }
+                }
+            };
+            btnConfirm.setOnClickListener(listener);
+            btnCancel.setOnClickListener(listener);
+            return dialog;
+        }
+    }
+
+    public static void showStringArrayDialog(Context context, Integer[] array, final StringArrayDialogCallback callback) {
+        final Dialog dialog = new Dialog(context, R.style.BottomDialog);
+        dialog.setContentView(R.layout.dialog_string_array);
+        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(true);
+        Window window = dialog.getWindow();
+        window.setWindowAnimations(R.style.BottomDialog_Animation);
+        WindowManager.LayoutParams params = window.getAttributes();
+        params.width = WindowManager.LayoutParams.MATCH_PARENT;
+        params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        params.gravity = Gravity.BOTTOM;
+        window.setAttributes(params);
+        LinearLayout container = (LinearLayout) dialog.findViewById(R.id.container);
+        View.OnClickListener itemListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView textView = (TextView) v;
+                if (callback != null) {
+                    callback.onItemClick(textView.getText().toString(), (int) v.getTag());
+                }
+                dialog.dismiss();
+            }
+        };
+        for (int i = 0, length = array.length; i < length; i++) {
+            TextView textView = new TextView(context);
+            textView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, CommonUtils.dip2px(context, 48)));
+            textView.setTextColor(context.getResources().getColor(R.color.color_title_txt));
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+            textView.setGravity(Gravity.CENTER);
+            textView.setText(array[i]);
+            textView.setTag(array[i]);
+            textView.setOnClickListener(itemListener);
+            container.addView(textView);
+
+            /*if (i != length - 1) {
+                View v = new View(context);
+                v.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, CommonUtils.dip2px(context, 1)));
+                v.setBackgroundColor(0xfff5f5f5);
+                container.addView(v);
+            }*/
+        }
+        dialog.findViewById(R.id.btn_cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+    }
+
+    public static Dialog loadingDialog(Context context, String text) {
+        Dialog dialog = new Dialog(context, R.style.BottomDialog);
+        dialog.setContentView(R.layout.dialog_loading);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        if (!TextUtils.isEmpty(text)) {
+            TextView titleView = (TextView) dialog.findViewById(R.id.text);
+            if (titleView != null) {
+                titleView.setText(text);
+            }
+        }
+        return dialog;
+    }
+
+    public interface StringArrayDialogCallback {
+        void onItemClick(String text, int tag);
+    }
+}

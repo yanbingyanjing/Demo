@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		    <meta name="apple-mobile-web-app-capable" content="yes">
+		    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		    <meta name="format-detection" content="telephone=no">
+		    <meta name="description" content="">
+		    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<title>签约公会</title>
+		<script type="text/javascript" src="js/adapter.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/Tool.js"></script>
+		<script type="text/javascript" src="js/layer/layer.js"></script>
+		<link rel="stylesheet" href="css/SignGuild.css" />
+		<link rel="stylesheet" href="css/Public.css" />
+	</head>
+	<body>
+		<div class="contents">
+			<div class="header">
+				<p id="guildname"></p>
+			</div>
+			<div class="nameCon">
+				<div class="photo"><img class="guildicon" src="image/loading.png"></div>
+				<div class="nicheng">
+					<div class="nicheng-name">公会昵称：<span class="guildname">个性得公会昵称</span></div>
+					<div class="id">ID:<span id="guildid"></span></div>
+				</div>
+			</div>
+			<div class="cont">
+				<div class="cont-head">您确认与该公会签约吗？</div>
+				<div class="cont-wapper">
+					<div class="photo"><img class="guildicon" src="image/loading.png"></div>
+					<div class="nicheng">
+						<div class="nicheng-name">签约公会：<span class="guildname">个性得公会昵称</span></div>
+						<div class="id">公会抽成比例:<span class="Perc">88%</span></div>
+					</div>
+				</div>
+				<div class="tip">
+					<div class="tip-tit">提醒:</div>
+					<div class="tip-con"><span class="guildname">公会昵称</span>招收各类主播加入<br>联系方式: <span id="contact"></span></div>
+				</div>
+			</div>
+			<div class="Agreement">
+				<div class="Agreement-pic" onclick="which(this)" id="agree"></div>
+				<div class="Agreement-con">我已阅读且同意<span>个性的公会昵称服务协议</span></div>
+			</div>
+			<div class="jionBtn">申请加入</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+    function which(dom){
+        $(dom).toggleClass('Agreement-pic-');
+    }
+    $(function(){
+        $(".jionBtn").click(function(){
+            if($("#agree").hasClass("Agreement-pic-")){
+                $.ajax({
+                    headers: {
+                        "XX-Token": localStorage.getItem("XX-Token"),
+                        "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+                    },
+                    url: localStorage.getItem("domain") + 'app/guild/applyAddGuildUser',
+                    type: "post",
+                    data: { guild_id: guild_id},
+                    dataType: 'json',
+                    cache: false,
+                    async: true,
+                    success: function (res) {
+                        if (res.code == 1) {
+                            layer.msg('申请加入成功,等待审核!');
+                            setInterval(function(){
+                                location.replace("shenhe.html?type=2");
+                            },1500)
+                        } else {
+                            layer.msg(res.msg);
+                        }
+                    },
+                    error: function () {
+                        layer.msg('网络异常');
+                    }
+                });
+            }else{
+                layer.msg("请仔细阅读服务协议");
+            }
+
+        });
+    })
+	var guild_id = getQueryVariable('guild_id');
+    tokeninit(function(){
+        $.ajax({
+            headers: {
+                "XX-Token": localStorage.getItem("XX-Token"),
+                "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+            },
+            url: localStorage.getItem("domain") + 'app/guild/getGuildInfo',
+            type: "post",
+            data: { guild_id: guild_id},
+            dataType: 'json',
+            cache: false,
+            async: true,
+            success: function (res) {
+                if (res.code == 1) {
+                    $('#guildname').html('公会名：' + res.data.name);
+                    $('.guildname').html(res.data.name);
+                    $('.Perc').html(res.data.divide_into + '%');
+                    $('#contact').html(res.data.contact);
+                    $('.guildicon').attr('src',res.data.icon);
+                    $('#guildid').html(res.data.id);
+                } else {
+                    layer.msg(res.msg);
+                }
+            },
+            error: function () {
+                layer.msg('网络异常');
+            }
+        });
+    });
+</script>

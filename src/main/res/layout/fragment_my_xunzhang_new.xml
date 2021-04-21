@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--    <com.jpeng.jptabbar.PagerSlidingTabStrip-->
+    <!--        android:id="@+id/tab_xunzhang"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="35dp"-->
+    <!--        android:layout_gravity="center_horizontal"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:textColor="@color/color_666666"-->
+    <!--        android:textSize="14sp"-->
+    <!--        app:pstsDividerColor="@android:color/transparent"-->
+    <!--        app:pstsIndicatorColor="@color/color_style"-->
+    <!--        app:pstsIndicatorHeight="2dp"-->
+    <!--        app:pstsScaleZoomMax="0.1"-->
+    <!--        app:pstsShouldExpand="false"-->
+    <!--        app:pstsTabPaddingLeftRight="10dp"-->
+    <!--        app:pstsTextSelectedColor="@color/color_000000"-->
+    <!--        app:pstsUnderlineColor="@android:color/transparent" />-->
+    <com.yjfshop123.live.ui.widget.TabXunzhangView
+        android:id="@+id/tab_xunzhang"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="10dp" />
+<com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+    android:layout_width="match_parent"
+    android:id="@+id/swipe_refresh"
+    android:layout_height="match_parent">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+</LinearLayout>

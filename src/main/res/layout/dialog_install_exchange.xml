@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lLayout_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+
+        <RelativeLayout
+            android:id="@+id/contentLay"
+            android:layout_width="252dp"
+            android:layout_height="230dp"
+            android:minHeight="230dp"
+            android:background="@drawable/bg_round_rect"
+
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/de_transparent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/tip_install_exchange"
+                    android:textColor="@color/color_666666"
+                    android:textSize="16dp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/tv_update_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingMultiplier="1.2"
+                    android:textColor="#404040"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_ok"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/shape_ffd100_20_button"
+                    android:gravity="center"
+                    android:minHeight="40dp"
+                    android:text="@string/download_now"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <com.yjfshop123.live.live.live.common.widget.NumberProgressBar
+                    android:id="@+id/npb"
+                    style="@style/NumberProgressBarStyle"
+                    android:layout_marginBottom="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contentLay"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:background="#d8d8d8"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="35dp"
+                android:layout_height="70dp"
+                android:src="@drawable/lib_update_app_close" />
+
+
+        </LinearLayout>
+
+
+
+</LinearLayout>

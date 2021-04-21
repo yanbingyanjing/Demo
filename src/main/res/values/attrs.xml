@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SwitchGroup">
+        <attr name="orientation1">
+            <flag name="horizontal" value="0"/>
+            <flag name="vertical" value="1"/>
+        </attr>
+        <attr name="pinned_view1" format="reference" />
+        <attr name="pinned_item1" format="reference" />
+        <attr name="pinned_item_array1" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="PullLayout">
+        <attr name="pull_limit" format="dimension" />
+        <attr name="support_over" format="boolean" />
+        <attr name="hold_adjust_type">
+            <flag name="not_adjust" value="0"/>
+            <flag name="adjust_content" value="1"/>
+            <flag name="elasticity_adjust" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <!--圆形头像-->
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+    <!--圆角头像-->
+    <declare-styleable name="SelectableRoundedImageView">
+        <attr name="sriv_left_top_corner_radius" format="dimension" />
+        <attr name="sriv_right_top_corner_radius" format="dimension" />
+        <attr name="sriv_left_bottom_corner_radius" format="dimension" />
+        <attr name="sriv_right_bottom_corner_radius" format="dimension" />
+        <attr name="sriv_border_width" format="dimension" />
+        <attr name="sriv_border_color" format="color" />
+        <attr name="sriv_oval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+    <declare-styleable name="RoundImageView">
+        <attr name="circle" format="boolean" />
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="SwitchButton">
+        <attr name="kswThumbDrawable" format="reference"/>
+        <attr name="kswThumbColor" format="color|reference"/>
+        <attr name="kswThumbMargin" format="dimension|reference"/>
+        <attr name="kswThumbMarginTop" format="dimension|reference"/>
+        <attr name="kswThumbMarginBottom" format="dimension|reference"/>
+        <attr name="kswThumbMarginLeft" format="dimension|reference"/>
+        <attr name="kswThumbMarginRight" format="dimension|reference"/>
+        <attr name="kswThumbWidth" format="dimension|reference"/>
+        <attr name="kswThumbHeight" format="dimension|reference"/>
+        <attr name="kswThumbRadius" format="dimension|reference"/>
+        <attr name="kswBackRadius" format="dimension|reference"/>
+        <attr name="kswBackDrawable" format="reference"/>
+        <attr name="kswBackColor" format="color|reference"/>
+        <attr name="kswFadeBack" format="boolean"/>
+        <attr name="kswBackMeasureRatio" format="float"/>
+        <attr name="kswAnimationDuration" format="integer"/>
+        <attr name="kswTintColor" format="color|reference"/>
+        <attr name="kswTextOn" format="string"/>
+        <attr name="kswTextOff" format="string"/>
+        <attr name="kswTextMarginH" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="WaveView">
+        <attr name="waveColor" format="color|reference" />
+        <attr name="waveCount" format="integer" />
+        <attr name="waveCenterIcon" format="reference" />
+    </declare-styleable>
+
+    <integer-array name="google_colors">
+        <item>@color/color_theme</item>
+        <item>@color/color_theme</item>
+        <item>@color/color_theme</item>
+        <item>@color/color_theme</item>
+    </integer-array>
+
+    <declare-styleable name="voisePlayingIconAttr">
+        <attr name="pointer_color" format="color" />
+        <attr name="pointer_num" format="integer" />
+        <attr name="pointer_width" format="float" />
+        <attr name="pointer_speed" format="integer" />
+    </declare-styleable>
+
+    <!--直播-->
+    <!--直播-->
+    <!--直播-->
+    <declare-styleable name="HeartLayout">
+        <attr name="initX" format="dimension" />
+        <attr name="initY" format="dimension" />
+        <attr name="xRand" format="dimension" />
+        <attr name="animLengthRand" format="dimension" />
+        <attr name="xPointFactor" format="dimension" />
+        <attr name="animLength" format="dimension" />
+        <attr name="heart_width" format="dimension" />
+        <attr name="heart_height" format="dimension" />
+        <attr name="bezierFactor" format="integer" />
+        <attr name="anim_duration" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundProgressBar">
+        <attr name="bgColor" format="color"/>
+        <attr name="roundColor" format="color"/>
+        <attr name="roundProgressColor" format="color"/>
+        <attr name="roundWidth" format="dimension"></attr>
+        <attr name="textColorP" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="max" format="integer"></attr>
+        <attr name="textIsDisplayable" format="boolean"></attr>
+        <attr name="style">
+            <enum name="STROKE" value="0"></enum>
+            <enum name="FILL" value="1"></enum>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="NumberProgressBar">
+        <attr name="progress_current" format="integer"/>
+        <attr name="progress_max" format="integer"/>
+        <attr name="progress_unreached_color" format="color"/>
+        <attr name="progress_reached_color" format="color"/>
+        <attr name="progress_reached_bar_height" format="dimension"/>
+        <attr name="progress_unreached_bar_height" format="dimension"/>
+        <attr name="progress_text_size" format="dimension"/>
+        <attr name="progress_text_color" format="color"/>
+        <attr name="progress_text_offset" format="dimension"/>
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="MyFrameLayout2">
+        <attr name="mfl_ratio" format="float"/>
+        <attr name="mfl_offestY" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="GiftMarkView">
+        <attr name="gm_icon_res_1" format="reference"/>
+        <attr name="gm_icon_res_2" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="DrawableTextView">
+        <attr name="dt_top_width" format="dimension"/>
+        <attr name="dt_top_height" format="dimension"/>
+        <attr name="dt_left_width" format="dimension"/>
+        <attr name="dt_left_height" format="dimension"/>
+        <attr name="dt_right_width" format="dimension"/>
+        <attr name="dt_right_height" format="dimension"/>
+        <attr name="dt_bottom_width" format="dimension"/>
+        <attr name="dt_bottom_height" format="dimension"/>
+        <attr name="dt_top_drawable" format="reference"/>
+        <attr name="dt_left_drawable" format="reference"/>
+        <attr name="dt_right_drawable" format="reference"/>
+        <attr name="dt_bottom_drawable" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyRelativeLayout1">
+        <attr name="mrl_radius" format="dimension"/>
+        <attr name="mrl_inner_r" format="dimension"/>
+        <attr name="mrl_inner_w" format="dimension"/>
+        <attr name="mrl_inner_h" format="dimension"/>
+        <attr name="mrl_inner_x" format="dimension"/>
+        <attr name="mrl_inner_y" format="dimension"/>
+        <attr name="mrl_line_m" format="dimension"/>
+        <attr name="mrl_line_mt" format="dimension"/>
+        <attr name="mrl_line_h" format="dimension"/>
+        <attr name="mrl_bg_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyLinearLayout2">
+        <attr name="mll_span_count" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="TextSeekBar">
+        <attr name="text2" format="string"/>
+        <attr name="progressVal" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="FrameImageView">
+        <attr name="fiv_ratio" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="PkProgressBar">
+        <attr name="ppb_minWidth" format="dimension"/>
+        <attr name="ppb_rate" format="float"/>
+        <attr name="ppb_left_color" format="color"/>
+        <attr name="ppb_right_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="ProgressTextView">
+        <attr name="ptv_bg_color" format="color"/>
+        <attr name="ptv_fg_color" format="color"/>
+        <attr name="ptv_stroke_width" format="dimension"/>
+        <attr name="ptv_progress" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="VideoRecordBtnView">
+        <attr name="vrb_max_width" format="dimension"/>
+        <attr name="vrb_min_width" format="dimension"/>
+        <attr name="vrb_start_width" format="dimension"/>
+        <attr name="vrb_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyTextView">
+        <attr name="mt_radius" format="dimension"/>
+        <attr name="mt_checked" format="boolean"/>
+        <attr name="mt_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MarqueeTextView">
+        <attr name="back_focused" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="RangeSlider">
+        <attr name="lineHeight" format="dimension"/>
+        <attr name="thumbWidth" format="dimension"/>
+        <attr name="lineColor" format="color"/>
+        <attr name="maskColor" format="color"/>
+        <attr name="tickCount" format="integer"/>
+        <attr name="leftThumbIndex" format="integer"/>
+        <attr name="rightThumbIndex" format="integer"/>
+        <attr name="leftThumbDrawable" format="reference"/>
+        <attr name="rightThumbDrawable" format="reference"/>
+        <attr name="midThumbDrawable" format="reference"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="StickySwitch">
+        <attr name="ss_leftIcon" format="reference|integer" />
+        <attr name="ss_leftText" format="reference|string" />
+        <attr name="ss_rightIcon" format="reference|integer" />
+        <attr name="ss_rightText" format="reference|string" />
+        <attr name="ss_iconSize" format="reference|dimension" />
+        <attr name="ss_iconPadding" format="reference|dimension" />
+        <attr name="ss_textSize" format="reference|dimension" />
+        <attr name="ss_selectedTextSize" format="reference|dimension" />
+        <attr name="ss_switchColor" format="reference|color" />
+        <attr name="ss_sliderBackgroundColor" format="reference|color" />
+        <attr name="ss_textColor" format="reference|color" />
+        <attr name="ss_animationDuration" format="reference|integer" />
+
+        <attr name="ss_animationType" format="enum">
+            <enum name="line" value="0"/>
+            <enum name="curved" value="1"/>
+        </attr>
+        <attr name="ss_textVisibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+            <enum name="gone" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CountDownView">
+        <!--颜色-->
+        <attr name="ringColor" format="color" />
+        <!-- 进度文本的字体大小 -->
+        <attr name="progressTextSize" format="dimension" />
+        <!-- 圆环宽度 -->
+        <attr name="ringWidth" format="float" />
+        <!--进度文本颜色-->
+        <attr name="progressTextColor" format="color"/>
+        <!--倒计时-->
+        <attr name="countdownTime" format="integer"/>
+    </declare-styleable>
+
+
+</resources>

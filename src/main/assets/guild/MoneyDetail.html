@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		    <meta name="apple-mobile-web-app-capable" content="yes">
+		    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		    <meta name="format-detection" content="telephone=no">
+		    <meta name="description" content="">
+		    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<title>详情</title>
+		<script type="text/javascript" src="js/adapter.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/Tool.js"></script>
+		<script type="text/javascript" src="js/echo.min.js"></script>
+		<script type="text/javascript" src="js/layer/layer.js"></script>
+		<link rel="stylesheet" href="css/Public.css" />
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.contens{
+			width: 100%;
+			background-color: #fff;
+		}
+		.li{
+			display: flex;
+			justify-content: space-between;
+			border-top: solid 0.01rem #f5f5f5;
+			padding: 0.25rem;
+		}
+		.liLeft-tit{
+			color: #353535;
+			font-size: 0.22rem;
+		}
+		.liLeft-time{
+			color: #afafaf;
+			font-size: 0.2rem;
+			line-height: 0.4rem;
+		}
+		.liRight{
+			font-size: 0.22rem;
+			color: #ff5519;
+			line-height: 0.6rem;
+		}
+	</style>
+	<body>
+		<div class="contens">
+			<div class="cont">
+				<!--<div class="li">-->
+					<!--<div class="liLeft">-->
+						<!--<div class="liLeft-tit">个性签名用户送礼物爱心火箭</div>-->
+						<!--<div class="liLeft-time">2020-03-25 16：08</div>-->
+					<!--</div>-->
+					<!--<div class="liRight">+8888888金蛋</div>-->
+				<!--</div>-->
+			</div>
+			<div><span style="text-align: center;width: 100%;display: block;font-size: 12px;color:grey;margin-top: 15px;">暂无更多数据</span></div>
+			<br>
+		</div>
+	</body>
+</html>
+<script>
+
+    var page = 0;
+    var isLoadedAll = false;
+    var isRefreshing = false;
+    var live_id = getQueryVariable('live_id');
+
+    /// 延迟加载图片
+    echo.init({
+        offset: 100,
+        throttle: 250,
+        unload: false
+    });
+
+    /// 监听 scroll bottom
+    window.addEventListener('scroll', () => {
+        var clientHeight = document.documentElement.clientHeight || window.innerHeight; // 可视区域高度
+        var scrollHeight = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop; // 滚动高度
+        var offsetHeight = document.body.offsetHeight || document.documentElement.offsetHeight; // 文档高度
+
+        if ((clientHeight + scrollHeight) >= (offsetHeight - 100)) {
+            if (isLoadedAll == false) {
+                loadData();
+            }
+        }
+    });
+
+    function loadData() {
+
+        if (isRefreshing) {
+            return;
+        }
+
+        isRefreshing = true
+        page++;
+
+        tokeninit(function () {
+            $.ajax({
+                headers: {
+                    "XX-Token": localStorage.getItem("XX-Token"),
+                    "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+                },
+                url: localStorage.getItem("domain") + 'app/guild/getLivegift',
+                type: "post",
+                data: { page: page,live_id:live_id},
+                dataType: 'json',
+                cache: false,
+                async: true,
+                success: function (res) {
+                    if (res.code == 1) {
+                        loadMoreUI(res.data.list);
+                    } else {
+                        isRefreshing = false;
+                        layer.msg(res.msg);
+                    }
+                },
+                error: function () {
+                    isRefreshing = false;
+                    layer.msg('网络异常');
+                }
+            });
+        });
+
+    };
+
+    function loadMoreUI(list) {
+
+        for (obj in list) {
+            var str = '';
+            str += '<div class="li">';
+            str += '<div class="liLeft">';
+            str += '<div class="liLeft-tit">' +  list[obj]['user_nickname'] + '送出礼物' + list[obj]['name']  + 'x' + list[obj]['num'] + '</div>';
+            str += '<div class="liLeft-time">' +  list[obj]['send_time'] + '</div>';
+            str += '</div>';
+            str += '<div class="liRight">+ ' + list[obj]['total_coin'] + '<coin class="coin_zh"></coin></div>';
+            str += '</div>';
+            $(".cont").append(str);
+        };
+
+        /// 判断加载出来的一页数据大于5条才会有加载更多
+        if (list.length < 15) {
+            isLoadedAll = true;
+        }
+
+        isRefreshing = false;
+
+        var coin_zh = localStorage.getItem('coin_zh');
+        if (coin_zh == undefined || coin_zh == null || coin_zh == '' || coin_zh == 'undefined'){
+            coin_zh = '金蛋';
+        }
+        console.log(coin_zh);
+        $('.coin_zh').html(coin_zh);
+    };
+
+    loadData();
+</script>

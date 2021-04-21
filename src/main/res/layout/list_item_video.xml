@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingBottom="18dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+
+                <com.yjfshop123.live.server.widget.CircleImageView
+                    android:id="@+id/community_item_portrait"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo" />
+                <ImageView
+                    android:id="@+id/community_item_sex"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@mipmap/boy" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/community_item_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="昵称"
+                    android:textColor="@color/color_3B3025"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center_vertical"
+
+                    android:orientation="horizontal">
+
+
+
+                    <ImageView
+                        android:id="@+id/community_item_talent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/da" />
+
+                    <ImageView
+                        android:id="@+id/community_item_vip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/community_item_icon_4" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/create_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+
+                android:textColor="@color/color_B4B4B4"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/community_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="3dp"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.2"
+            android:maxLines="2"
+            android:text="标题"
+            android:textColor="@color/color_000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/community_item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="3dp"
+            android:ellipsize="end"
+
+            android:lineSpacingMultiplier="1.2"
+            android:text="内容"
+            android:textColor="@color/color_C93B3025"
+            android:textSize="14sp" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/community_item_cardview"
+            style="@style/card_style"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:id="@+id/community_item_video_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <com.waynell.videolist.widget.TextureVideoView
+                android:id="@+id/community_item_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:scaleType="centerCrop" />
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/community_item_progress"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                app:cpb_background_progressbar_color="@color/white"
+                app:cpb_background_progressbar_width="3dp"
+                app:cpb_progressbar_color="@color/color_style"
+                app:cpb_progressbar_width="3dp" />
+
+            <ImageView
+                android:id="@+id/community_item_video_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/play_btn"
+                android:visibility="invisible" />
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="62dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/community_item_praise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:drawableLeft="@mipmap/xiaoshou"
+                    android:drawablePadding="4dp"
+
+                    android:gravity="center_vertical"
+                    android:text="赞"
+                    android:textColor="@color/color_858483"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/community_item_comments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="16dp"
+
+                    android:drawableLeft="@mipmap/pinglun_t"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical"
+                    android:text="评论"
+                    android:textColor="@color/color_858483"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/community_item_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/dituweizhi"
+                android:layout_gravity="center_vertical"
+
+                android:text="上海市"
+                android:drawablePadding="4dp"
+                android:textColor="@color/color_858483"
+                android:textSize="10sp" />
+            <TextView
+                android:id="@+id/community_item_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="4dp"
+                android:text="#帖子一幅#"
+                android:textColor="@color/color_858483"
+                android:textSize="11sp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+android:layout_marginStart="62dp"
+        android:layout_gravity="bottom"
+        android:background="@color/color_4DE9DAC4" />
+</FrameLayout>

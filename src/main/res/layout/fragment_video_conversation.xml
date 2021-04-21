@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_theme"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp">
+
+        <ImageView
+            android:id="@+id/h_mag_search"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:background="@null"
+            android:scaleType="center"
+            android:src="@drawable/conversation_search"
+            android:tint="@color/color_title_txt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/x_message"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/conversation_dele"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_gravity="right"
+            android:background="@null"
+            android:scaleType="center"
+            android:src="@drawable/conversation_dele"
+            android:tint="@color/white" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/line_color" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+            android:id="@+id/conversation_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/conversation_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="#2b2b2b" />
+    </FrameLayout>
+
+
+</LinearLayout>

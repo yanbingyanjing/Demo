@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/dialog_live_sm_1"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/service_dialog_top_bg"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="关闭直播"
+            android:textColor="#333333"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/line_color" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/dialog_live_sm_2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/linerlayout_water_sel"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dialog_live_manager_2_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="禁用直播"
+            android:textColor="#333333"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/line_color" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/dialog_live_sm_3"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/linerlayout_water_sel"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="禁用账户"
+            android:textColor="#333333"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/line_color" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/dialog_live_sm_4"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/linerlayout_water_sel"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/cancel"
+            android:textColor="#333333"
+            android:textSize="16dp" />
+    </FrameLayout>
+
+</LinearLayout>

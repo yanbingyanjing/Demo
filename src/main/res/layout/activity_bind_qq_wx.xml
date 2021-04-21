@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f5f5f5"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/location_rl"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_ffffff"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:layout_toRightOf="@+id/img1"
+            android:text="@string/setting_2"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp" />
+
+        <com.yjfshop123.live.ui.widget.switchbutton.SwitchButton
+            android:id="@+id/location_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:paddingTop="6dp"
+            app:kswAnimationDuration="0"
+            app:kswBackDrawable="@drawable/ios_back_drawable"
+            app:kswBackMeasureRatio="1.8"
+            app:kswThumbDrawable="@drawable/ios_thumb"
+            app:kswThumbMarginBottom="-10dp"
+            app:kswThumbMarginLeft="-15dp"
+            app:kswThumbMarginRight="-15dp"
+            app:kswThumbMarginTop="-5.5dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/wq_rl"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_ffffff"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/bind_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="@string/bind_qq"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/phoneTxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="120dp"
+            android:background="@null"
+            android:gravity="right|center_vertical"
+            android:hint="@string/bind_input_qq"
+            android:paddingRight="10dp"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_999999"
+            android:textCursorDrawable="@drawable/edittext_color"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

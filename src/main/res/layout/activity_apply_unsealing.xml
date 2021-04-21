@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_0B0A08"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="17dp"
+
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/real_name"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/real_name"
+                style="@style/EditNewUiStyle"
+                android:layout_marginTop="16dp"
+                android:hint="@string/hint_input_real_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/contact_phone"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/contact_phone"
+                style="@style/EditNewUiStyle"
+                android:layout_marginTop="16dp"
+                android:inputType="number"
+                android:hint="@string/hint_input_contact_phone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/unsealing_reason"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_edit_new_ui"
+                android:paddingStart="12dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="18dp">
+
+                <com.yjfshop123.live.ui.widget.MyEditText
+                    android:id="@+id/signatureTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="@string/hint_input_unsealing_seaon"
+                    android:lineSpacingMultiplier="1.2"
+                    android:maxLines="10"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/color_80CECECD"
+                    android:textCursorDrawable="@drawable/edittext_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/currentTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:text="@string/unsealing_input"
+                    android:textColor="@color/color_content_txt"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/upload_unsealing_pic"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/upload_list"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:minHeight="75dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/confir"
+                android:textSize="16sp"
+                android:background="@drawable/bg_new_ui_btn"
+                android:textColor="@color/white"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@string/font_fontFamily_medium"
+                android:text="@string/confir_submit"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

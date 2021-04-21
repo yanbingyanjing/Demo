@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="18dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/two"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/three"
+        android:layout_alignBottom="@+id/three"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="6dp">
+
+        <View
+            android:id="@+id/long_line"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@color/color_21D2A875" />
+
+        <View
+            android:id="@+id/short_line"
+            android:layout_width="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/four"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:background="@color/color_21D2A875" />
+
+        <RelativeLayout
+            android:id="@+id/four"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/vip_level_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/vip_level"
+                android:layout_alignTop="@+id/vip_level"
+                android:layout_alignEnd="@+id/vip_level"
+                android:layout_alignBottom="@+id/vip_level"
+                android:scaleType="fitXY"
+                android:src="@mipmap/huangguan1" />
+
+            <TextView
+                android:id="@+id/vip_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingStart="32dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="2dp"
+                android:text="VIP0"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/two"
+        android:orientation="horizontal"
+        android:paddingBottom="29dp">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+
+            android:background="@drawable/bg_fffcf2_8"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/des_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="5dp"
+                    android:textColor="@color/color_854948"
+                    android:textSize="10sp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="13dp"
+                android:background="@color/color_1FFFFFFF" />
+
+            <LinearLayout
+                android:id="@+id/detail_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:visibility="gone"
+                    android:layout_width="42dp"
+                    android:layout_height="44dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="horizontal"
+                    android:padding="2dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="7dp"
+
+                            android:paddingBottom="7dp"
+                            android:text="@string/fee"
+                            android:textColor="@color/color_AFAFAF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/vip_level_fee"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/color_854948"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp"
+
+                            android:text="@string/ned_huoyue"
+                            android:textColor="@color/color_AFAFAF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/vip_level_update_need"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/color_854948"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp"
+                            android:text="选品佣金"
+                            android:textColor="@color/color_AFAFAF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/vip_level_lower"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/color_854948"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/two">
+
+        <ImageView
+            android:id="@+id/vip_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/level_name"
+            android:layout_alignTop="@+id/level_name"
+            android:layout_alignEnd="@+id/level_name"
+            android:layout_alignBottom="@+id/level_name"
+            android:scaleType="fitXY"
+            android:src="@mipmap/vip_one" />
+
+        <TextView
+            android:id="@+id/level_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="2dp"
+            android:text="流量用户"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</RelativeLayout>

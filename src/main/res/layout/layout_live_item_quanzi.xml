@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:voisePlayingIconAttr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="18dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/head_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_round_red_stroke"
+        android:orientation="vertical"
+        android:padding="1dp">
+
+        <com.yjfshop123.live.server.widget.CircleImageView
+            android:id="@+id/head"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/moren_head" />
+
+        <LinearLayout
+            android:id="@+id/layout_live_item_vpi_ll"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignEnd="@+id/head"
+            android:layout_alignBottom="@+id/head"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_round_red"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.yjfshop123.live.ui.widget.VoisePlayingIcon
+                android:id="@+id/layout_live_item_vpi"
+                android:layout_width="6dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:visibility="visible"
+                voisePlayingIconAttr:pointer_color="@android:color/white"
+                voisePlayingIconAttr:pointer_num="4"
+                voisePlayingIconAttr:pointer_width="1.6" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/color_333333"
+        android:textSize="10sp" />
+
+</LinearLayout>

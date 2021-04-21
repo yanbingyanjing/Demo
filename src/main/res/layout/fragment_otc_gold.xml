@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_FFFDF8"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp">
+
+        <com.jpeng.jptabbar.PagerSlidingTabStrip
+            android:id="@+id/h_1_nts_sty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/color_593B3025"
+            android:textSize="16sp"
+            android:textStyle="bold"
+
+            app:pstsDividerColor="@android:color/transparent"
+            app:pstsIndicatorColor="@color/transparent"
+            app:pstsIndicatorHeight="2dp"
+            app:pstsScaleZoomMax="0.2"
+            app:pstsShouldExpand="false"
+            app:pstsTabPaddingLeftRight="6dp"
+            app:pstsTextSelectedColor="@color/color_333333"
+            app:pstsUnderlineColor="@android:color/transparent" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+
+            <TextView
+                android:id="@+id/order_manager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/bg_graditent_fdf7f1_fef3d5_left_67"
+                android:paddingStart="13dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:visibility="gone"
+                android:text="快捷订单"
+                android:textColor="@color/color_BA965C"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/msg_count"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@mipmap/red_yuan"
+                android:enabled="false"
+                android:gravity="center"
+                android:minWidth="14dp"
+                android:minHeight="14dp"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_FFFDF8" />
+</LinearLayout>

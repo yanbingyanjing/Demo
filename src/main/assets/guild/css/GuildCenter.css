@@ -1,0 +1,19 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.contents{
+	width: 100%;
+	background: #fff;
+}
+.Setup,.Join{
+	width: 6.4rem;
+	height: 2.6rem;
+	background: url(../image/Setup.png) no-repeat;
+	background-size:cover;
+	margin: 0.6rem auto;
+}
+.Join{
+	background: url(../image/Join.png) no-repeat;
+	background-size:cover;
+}

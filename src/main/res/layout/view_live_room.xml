@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--守护人数-->
+    <LinearLayout
+        android:id="@+id/btn_guard"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="87dp"
+        android:background="@drawable/bg_live_item2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="visible"
+
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/guard_icon" />
+
+        <TextView
+            android:id="@+id/guard_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/xwd"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@mipmap/icon_arrow_right" />
+    </LinearLayout>
+
+    <!--收入金蛋-->
+    <LinearLayout
+        android:id="@+id/btn_votes"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_alignTop="@id/btn_guard"
+
+        android:layout_toRightOf="@id/btn_guard"
+        android:background="@drawable/bg_live_item"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp">
+<ImageView
+    android:layout_width="15dp"
+    android:layout_marginTop="2dp"
+    android:src="@mipmap/gold_egg"
+    android:layout_height="16dp"/>
+        <TextView
+            android:id="@+id/votes_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_jinbi"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/votes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@mipmap/icon_arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_live_room_time_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_guard"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_live_item"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/view_live_room_record_ball"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/liveshow_item_dot"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/view_live_room_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="00:00:00"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/live_notice_fl"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_below="@id/view_live_room_time_ll"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_live_item"
+        android:paddingLeft="8dp"
+        android:paddingRight="0dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="14dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/home_header_msg_icon"
+            android:tint="@color/color_style" />
+
+        <com.yjfshop123.live.ui.widget.MarqueeTextView
+            android:id="@+id/live_notice_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="28dp"
+            android:fontFamily="serif"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            app:back_focused="true" />
+
+        <ImageView
+            android:id="@+id/live_notice_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="4dp"
+            android:padding="6dp"
+            android:src="@drawable/ac_cs_dialog_cancel"
+            android:tint="@color/white" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/live_room_recording_fl"
+        android:layout_width="90dp"
+        android:layout_height="24dp"
+        android:layout_alignTop="@id/btn_guard"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/live_room_recording_bg2"
+        android:visibility="gone">
+
+        <com.yjfshop123.live.live.live.common.widget.gift.view.DrawableTextView
+            android:id="@+id/live_room_recording_dtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="开始录制"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            app:dt_left_drawable="@drawable/live_room_rec"
+            app:dt_left_height="8dp"
+            app:dt_left_width="24dp" />
+    </FrameLayout>
+
+    <!--守护用户进入动效-->
+    <com.yjfshop123.live.live.live.common.widget.gift.view.MyFrameLayout2
+        android:id="@+id/enter_room_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="220dp"
+        app:mfl_ratio="0.129">
+
+        <ImageView
+            android:id="@+id/jg_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.6"
+            android:src="@mipmap/icon_live_jin_guang"
+            android:translationX="500dp" />
+
+        <RelativeLayout
+            android:id="@+id/jg_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationX="-500dp">
+
+            <com.yjfshop123.live.server.widget.CircleImageView
+                android:id="@+id/jg_avatar"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:scaleType="centerCrop"
+                app:civ_border_color="@color/color_style"
+                app:civ_border_width="1dp" />
+
+            <com.yjfshop123.live.live.live.common.widget.gift.view.StarView
+                android:id="@+id/star"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp" />
+
+            <TextView
+                android:id="@+id/jg_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="40dp"
+                android:layout_toRightOf="@id/jg_avatar"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </com.yjfshop123.live.live.live.common.widget.gift.view.MyFrameLayout2>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/enter_room_gif"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true" />
+
+    <com.opensource.svgaplayer.SVGAImageView
+        android:id="@+id/gift_room_svga"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        app:autoPlay="true"
+        app:loopCount="1" />
+
+    <FrameLayout
+        android:id="@+id/gift_group_1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@id/enter_room_group"
+        android:layout_marginBottom="50dp" />
+
+    <FrameLayout
+        android:id="@+id/gift_group_2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@id/gift_group_1" />
+
+    <LinearLayout
+        android:id="@+id/gif_gift_tip_group"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_below="@id/view_live_room_time_ll"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_live_gift_tip"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:translationX="500dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="8dp"
+            android:src="@mipmap/icon_live_gift_3" />
+
+        <TextView
+            android:id="@+id/gif_gift_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/enter_tip_group"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_below="@id/view_live_room_time_ll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_live_enter_tip"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:translationX="-500dp">
+
+        <TextView
+            android:id="@+id/enter_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+</RelativeLayout>

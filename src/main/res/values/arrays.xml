@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="home_titles">
+        <item>直播</item>
+<!--        <item>录播</item>-->
+        <item>短视频</item>
+        <item>关注</item>
+<!--                <item>录播</item>-->
+        <!--<item>排行榜</item>-->
+    </string-array>
+    <string-array name="otc_titles">
+        <item>我要买</item>
+        <item>我要卖</item>
+
+    </string-array>
+    <string-array name="home_titles2">
+        <item>附近</item>
+        <item>推荐</item>
+        <item>关注</item>
+    </string-array>
+
+    <string-array name="h_4_titles">
+        <item>女神榜</item>
+        <item>富豪榜</item>
+    </string-array>
+
+    <string-array name="paihang_titles">
+        <item>周榜</item>
+        <item>月榜</item>
+        <item>总榜</item>
+    </string-array>
+
+    <string-array name="album_titles">
+        <item>照片</item>
+        <item>视频</item>
+    </string-array>
+
+    <string-array name="video_titles">
+        <item>最新</item>
+        <item>热门</item>
+    </string-array>
+
+    <string-array name="task_titles">
+        <item>视频任务</item>
+        <item>语音任务</item>
+    </string-array>
+
+    <string-array name="wallet_titles">
+        <item>我的金蛋</item>
+        <item>VIP中心</item>
+    </string-array>
+
+    <string-array name="tiezi_titles">
+        <item>我的帖子</item>
+        <item>我的回复</item>
+    </string-array>
+
+    <string-array name="mm_titles">
+        <item>资料</item>
+        <item>视频</item>
+        <item>动态</item>
+        <item>录播</item>
+    </string-array>
+
+    <string-array name="comm_titles">
+        <item>推荐</item>
+        <item>同城</item>
+        <item>关注</item>
+    </string-array>
+
+    <string-array name="comm_titles_new">
+        <item>春花草</item>
+        <item>商学院</item>
+        <item>关注</item>
+    </string-array>
+    <string-array name="xunzhang_title">
+        <item>我的选品</item>
+        <item>选品说明</item>
+    </string-array>
+    <string-array name="xunzhang_status_title">
+        <item>进行中</item>
+        <item>已结束</item>
+    </string-array>
+
+    <string-array name="shouzhi_title">
+        <item>今日收入</item>
+        <item>近7日收入</item>
+        <item>近30日收入</item>
+    </string-array>
+    <string-array name="shouzhi_out_title">
+        <item>今日支出</item>
+        <item>近7日支出</item>
+        <item>近30日支出</item>
+    </string-array>
+    <string-array name="shouru_zhichu">
+        <item>收入</item>
+        <item>支出</item>
+
+    </string-array>
+    <string-array name="medaling_status">
+        <item>进行中</item>
+        <item>已结束</item>
+    </string-array>
+    <string-array name="income">
+        <item>今日</item>
+        <item>昨天</item>
+        <item>近一周</item>
+    </string-array>
+</resources>

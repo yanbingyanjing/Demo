@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog Title="images">
+    <Emoticon File="d_hehe" Tag="[呵呵]" />
+    <Emoticon File="d_keai" Tag="[可爱]" />
+    <Emoticon File="d_taikaixin" Tag="[太开心]" />
+    <Emoticon File="d_guzhang" Tag="[鼓掌]" />
+    <Emoticon File="d_xixi" Tag="[嘻嘻]" />
+    <Emoticon File="d_haha" Tag="[哈哈]" />
+    <Emoticon File="d_xiaoku" Tag="[笑哭]" />
+    <Emoticon File="d_tiaopi" Tag="[调皮]" />
+    <Emoticon File="d_chanzui" Tag="[馋嘴]" />
+    <Emoticon File="d_heixian" Tag="[黑线]" />
+    <Emoticon File="d_han" Tag="[汗]" />
+    <Emoticon File="d_wabishi" Tag="[挖鼻屎]" />
+    <Emoticon File="d_heng" Tag="[哼]" />
+    <Emoticon File="d_nu" Tag="[怒]" />
+    <Emoticon File="d_kelian" Tag="[可怜]" />
+    <Emoticon File="d_liulei" Tag="[流泪]" />
+    <Emoticon File="d_daku" Tag="[大哭]" />
+    <Emoticon File="d_haixiu" Tag="[害羞]" />
+    <Emoticon File="d_aini" Tag="[爱你]" />
+    <Emoticon File="d_qinqin" Tag="[亲亲]" />
+
+    <Emoticon File="d_doge" Tag="[doge]" />
+    <Emoticon File="d_miao" Tag="[miao]" />
+    <Emoticon File="d_yinxian" Tag="[阴险]" />
+    <Emoticon File="d_touxiao" Tag="[偷笑]" />
+    <Emoticon File="d_ku" Tag="[酷]" />
+    <Emoticon File="d_sikao" Tag="[思考]" />
+    <Emoticon File="d_baibai" Tag="[拜拜]" />
+    <Emoticon File="d_bishi" Tag="[鄙视]" />
+    <Emoticon File="d_bizui" Tag="[闭嘴]" />
+    <Emoticon File="d_chijing" Tag="[吃惊]" />
+    <Emoticon File="d_dahaqi" Tag="[打哈欠]" />
+    <Emoticon File="d_dalian" Tag="[打脸]" />
+    <Emoticon File="d_ganmao" Tag="[感冒]" />
+    <Emoticon File="d_kun" Tag="[困]" />
+    <Emoticon File="d_zhouma" Tag="[咒骂]" />
+    <Emoticon File="d_shengbing" Tag="[生病]" />
+    <Emoticon File="d_shiwang" Tag="[失望]" />
+    <Emoticon File="d_shuai" Tag="[衰]" />
+    <Emoticon File="d_shuijiao" Tag="[睡觉]" />
+    <Emoticon File="d_tu" Tag="[吐]" />
+
+    <Emoticon File="d_weiqu" Tag="[委屈]" />
+    <Emoticon File="d_xu" Tag="[嘘]" />
+    <Emoticon File="d_yiwen" Tag="[疑问]" />
+    <Emoticon File="d_yun" Tag="[晕]" />
+    <Emoticon File="d_zuohengheng" Tag="[左哼哼]" />
+    <Emoticon File="d_youhengheng" Tag="[右哼哼]" />
+    <Emoticon File="d_zhuakuang" Tag="[抓狂]" />
+    <Emoticon File="d_zhutou" Tag="[猪头]" />
+    <Emoticon File="xinsui" Tag="[心碎]" />
+    <Emoticon File="l_xin" Tag="[心]" />
+    <Emoticon File="h_xihuanni" Tag="[喜欢你]" />
+    <Emoticon File="h_buyao" Tag="[不要]" />
+    <Emoticon File="h_bang" Tag="[棒]" />
+    <Emoticon File="h_lai" Tag="[来]" />
+    <Emoticon File="h_ok" Tag="[OK]" />
+    <Emoticon File="h_quantou" Tag="[拳头]" />
+    <Emoticon File="h_ruo" Tag="[弱]" />
+    <Emoticon File="h_woshou" Tag="[握手]" />
+    <Emoticon File="h_shengli" Tag="[胜利]" />
+    <Emoticon File="h_zan" Tag="[赞]" />
+
+    <Emoticon File="o_lazhu" Tag="[蜡烛]" />
+    <Emoticon File="o_liwu" Tag="[礼物]" />
+    <Emoticon File="o_dangao" Tag="[蛋糕]" />
+    <Emoticon File="o_feiji" Tag="[飞机]" />
+    <Emoticon File="o_ganbei" Tag="[干杯]" />
+    <Emoticon File="o_weiguan" Tag="[围观]" />
+    <Emoticon File="w_fuyun" Tag="[云]" />
+    <Emoticon File="w_taiyang" Tag="[太阳]" />
+    <Emoticon File="w_weifeng" Tag="[微风]" />
+    <Emoticon File="w_xiayu" Tag="[下雨]" />
+    <Emoticon File="w_yueliang" Tag="[月亮]" />
+</Catalog>
+
+

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_theme"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/h_1_top_fl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <com.jpeng.jptabbar.PagerSlidingTabStrip
+            android:id="@+id/h_1_nts_sty"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/color_content_txt"
+            android:textSize="14sp"
+            app:pstsDividerColor="@android:color/transparent"
+            app:pstsIndicatorColor="@color/color_style"
+            app:pstsIndicatorHeight="2dp"
+            app:pstsScaleZoomMax="0.1"
+            app:pstsShouldExpand="false"
+            app:pstsTabPaddingLeftRight="20dp"
+            app:pstsTextSelectedColor="@color/color_title_txt"
+            app:pstsUnderlineColor="@android:color/transparent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/line_color" />
+    </FrameLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/h_1_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

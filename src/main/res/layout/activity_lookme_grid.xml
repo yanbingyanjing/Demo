@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/dataGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.yjfshop123.live.server.widget.CircleImageView
+                    android:id="@+id/authImg"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp" />
+
+                <TextView
+                    android:id="@+id/lookTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text=""
+                    android:textColor="@color/color_333333"
+                    android:textSize="12sp" />
+
+                <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+
+                    android:id="@+id/swipe_refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_ffffff"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/shimmer_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10dp" />
+
+
+                </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/noDataLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/noData"
+            android:layout_width="160dp"
+            android:layout_height="78dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/nodate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noData"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="暂无数据"
+            android:textColor="#8c8c8c"
+            android:textSize="12dp" />
+    </RelativeLayout>
+</LinearLayout>

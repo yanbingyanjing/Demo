@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		    <meta name="apple-mobile-web-app-capable" content="yes">
+		    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		    <meta name="format-detection" content="telephone=no">
+		    <meta name="description" content="">
+		    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<title>公会中心</title>
+		<script type="text/javascript" src="js/adapter.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/Tool.js"></script>
+		<script type="text/javascript" src="js/layer/layer.js"></script>
+		<link rel="stylesheet" href="css/Public.css" />
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.contents{
+			width: 100%;
+			height: 13.34rem;
+			background-color: #f5f5f5;
+			position: absolute;
+		}
+		.cont{
+			background-color: #fff;
+			font-size: 0.24rem;
+			color: #c6c6c6;
+			margin: 0.3rem 0.39rem 0 0.39rem;
+		}
+		textarea{
+			width: 88%;
+			height: 2.62rem;
+			margin: 0.3rem 0.39rem 0 0.39rem;
+			border: none;
+			font-size: 0.26rem;
+			text-indent: 0.2rem;
+			line-height: 0.4rem;
+			font-family: "microsoft yahei";
+		}
+		.tip{
+			text-align: right;
+			padding-right: 0.2rem;
+			padding-bottom: 0.1rem;
+		}
+		.btn{
+			width: 2rem;
+			height: 0.6rem;
+			text-align: center;
+			line-height: 0.6rem;
+			border-radius: 0.15rem;
+			font-size: 0.28rem;
+			margin: 0.3rem auto 0;
+			background-color: #ff5519;
+			color: #fff;
+
+		}
+	</style>
+	<body>
+		<div class="contents">
+			<div class="cont">
+				<textarea maxlength="30" placeholder="请输入公会简介" id="text"></textarea>
+				<div class="tip">
+					30字
+				</div>
+			</div>
+			<div class="btn">保存</div>
+		</div>
+		</div>
+	</body>
+</html>
+<script>
+    tokeninit(function () {
+
+        $.ajax({
+            headers: {
+                "XX-Token": localStorage.getItem("XX-Token"),
+                "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+            },
+            url: localStorage.getItem("domain") + 'app/guild/getGuildInfoByuser',
+            type: "post",
+            data: {},
+            dataType: 'json',
+            cache: false,
+            async: true,
+            success: function (res) {
+                if (res.code == 1) {
+                    $('#text').val(res.data.desc);
+                } else {
+                    layer.msg(res.msg);
+                }
+            },
+            error: function () {
+                layer.msg('网络异常');
+            }
+        });
+
+        $('.btn').on('click',function () {
+            var desc = $('#text').val();
+            $.ajax({
+                headers: {
+                    "XX-Token": localStorage.getItem("XX-Token"),
+                    "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+                },
+                url: localStorage.getItem("domain") + 'app/guild/updateGuild',
+                type: "post",
+                data: {desc:desc},
+                dataType: 'json',
+                cache: false,
+                async: true,
+                success: function (res) {
+                    if (res.code == 1) {
+                        layer.msg('公会简介保存成功');
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                },
+                error: function () {
+                    layer.msg('网络异常');
+                }
+            });
+        })
+    })
+
+</script>

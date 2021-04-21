@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yjfshop123.live.message.ui.views.ChatView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chat_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_content_bg"
+    android:orientation="vertical">
+
+    <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/chat_input"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <cn.jiguang.imui.messages.MessageList
+            android:id="@+id/msg_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:avatarHeight="44dp"
+            app:avatarRadius="22dp"
+            app:avatarWidth="44dp"
+            app:bubbleMaxWidth="0.70"
+            app:dateBackgroundColor="@color/aurora_msg_date_bg_color"
+            app:datePaddingTop="15dp"
+            app:dateTextColor="@color/aurora_msg_date_text_color"
+            app:dateTextSize="12dp"
+            app:receiveBubblePaddingLeft="16dp"
+            app:receiveBubblePaddingRight="8dp"
+            app:receiveTextColor="@color/aurora_msg_receive_text_color"
+            app:receiveTextSize="13dp"
+            app:sendBubblePaddingLeft="8dp"
+            app:sendBubblePaddingRight="16dp"
+            app:sendTextColor="@color/aurora_msg_send_text_color"
+            app:sendTextSize="13dp"
+            app:showReceiverDisplayName="false"
+            app:showSenderDisplayName="false" />
+
+    </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+
+    <cn.jiguang.imui.chatinput.ChatInputView
+        android:id="@+id/chat_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:inputMarginLeft="3dp"
+        app:inputMarginRight="3dp"
+        app:showSelectAlbum="false" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_theme">
+
+        <ImageView
+            android:id="@+id/chat_back"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:background="@null"
+            android:scaleType="center"
+            android:src="@drawable/head_back"
+            android:tint="@color/color_title_txt" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/chat_vip_iv"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/icon_vip"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/color_title_txt"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/chat_people_iv"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_gravity="right"
+            android:background="@null"
+            android:scaleType="center"
+            android:src="@drawable/chat_people_iv"
+            android:tint="@color/color_title_txt" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/line_color" />
+
+    </FrameLayout>
+
+    <cn.jiguang.imui.chatinput.myvoice.VoiceRecorderView
+        android:id="@+id/voice_recorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+</com.yjfshop123.live.message.ui.views.ChatView>

@@ -1,0 +1,122 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.contents{
+	width: 100%;
+	height:13.34rem ;
+	background: url(../image/signBg.png) no-repeat;
+	background-size: cover;
+	position: absolute;
+}
+.header{
+	width: 4.66rem;
+	height: 0.33rem;
+	margin: 4.6rem auto 0;
+	background: url(../image/headerBg.png) no-repeat;
+	background-size: cover;
+}
+P{
+	font-size: 0.33rem;
+	color: #956515;
+	font-family: "microsoft yahei";
+	text-align: center;
+	line-height: 0.38rem;
+	font-weight: 600;
+	letter-spacing: 0.01rem;
+}
+.nameCon,.cont{
+	width: 6.33rem;
+	border: solid 0.01rem #cb1a15;
+	border-radius: 0.4rem;
+	padding: 0.3rem;
+	margin: 0.3rem auto;
+	display: flex;
+	background-color: #feedd1;
+}
+.photo{
+	width: 1.35rem;
+	height: 1.35rem;
+	border-radius: 50%;
+}
+.photo img{
+	width: 1.35rem;
+	height: 1.35rem;
+}
+.nicheng{
+	color: #8c5900;
+	font-size: 0.30rem;
+	padding: 0.26rem;
+	line-height: 0.4rem;
+}
+.cont{
+	background-color: #fef1c5;
+	display:block;
+}
+.cont-head{
+	color:#664208 ;
+	font-size: 0.34rem;
+	font-weight: 600;
+}
+.cont-wapper{
+	display: flex;
+	margin-top: 0.1rem;
+}
+.Perc{
+	color: #CB1A15;
+	padding-left: 0.2rem;
+}
+.tip{
+	font-size: 0.24rem;
+	color: #8c5900;
+}
+.tip-tit{
+	font-size: 0.26rem;
+	color: #ed4444;
+	float: left;
+	padding-right: 0.1rem;
+}
+.Agreement{
+	width: 5.46rem;
+	height: 0.3rem;
+	margin: 0 auto;
+}
+.Agreement-pic{
+	width: 0.27rem;
+	height: 0.27rem;
+	background: url(../image/false.png) no-repeat;
+	background-size: contain;
+	float: left;
+	cursor: pointer;
+}
+.Agreement-pic-{
+	width: 0.27rem;
+	height: 0.27rem;
+	background: url(../image/true.png) no-repeat;
+	background-size: contain;
+	float: left;
+	cursor: pointer;
+}
+.Agreement-con{
+	color: #252525;
+	font-size: 0.26rem;
+	letter-spacing: 0.02rem;
+	padding-left: 0.09rem;
+	float: left;
+}
+.Agreement-con span{
+	border-bottom: solid 0.01rem #ff5519;
+	color: #ff5519;
+}
+.jionBtn{
+	width: 6.33rem;
+	height: 0.7rem;
+	font-size: 0.32rem;
+	color: #fff;
+	text-align: center;
+	background-color: #ed4444;
+	border-radius: 0.1rem;
+	margin: 0.3rem auto;
+	line-height: 0.7rem;
+	display: table;
+}

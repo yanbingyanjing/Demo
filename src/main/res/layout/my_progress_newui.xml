@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/youbiao"
+        android:layout_width="48dp"
+        android:layout_height="21dp"
+        android:background="@mipmap/progress_pao"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="9dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="7dp">
+
+        <ImageView
+            android:layout_width="7dp"
+            android:layout_height="9.8dp"
+            android:src="@mipmap/progress_map" />
+
+        <TextView
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:includeFontPadding="false"
+            android:text="0%"
+            android:textColor="@color/color_302011"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:background="@mipmap/progress_bg">
+
+        <View
+            android:id="@+id/progress_view"
+            android:layout_width="0dp"
+            android:layout_height="18dp"
+            android:background="@mipmap/progress_degress_new" />
+    </LinearLayout>
+</LinearLayout>

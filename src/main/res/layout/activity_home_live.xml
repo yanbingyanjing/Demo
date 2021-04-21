@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:id="@+id/home_container_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50.5dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="50dp"
+        android:background="@color/line_color" />
+
+    <com.jpeng.jptabbar.JPTabBar
+        android:id="@+id/home_tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        jp:TabAnimate="Scale"
+        jp:TabIconSize="20dp"
+        jp:TabMiddleBottomDis="16dp"
+        jp:TabMiddleHMargin="40dp"
+        jp:TabMiddleIcon="@drawable/home_live_icon"
+
+        jp:TabMiddleBgIcon="@drawable/home_live_icon_bg"
+        jp:TabMiddleIconColor="@color/color_style"
+
+        jp:TabNormalColor="@color/color_333333"
+        jp:TabSelectColor="@color/color_style"
+        jp:TabTextSize="9dp" />
+</FrameLayout>

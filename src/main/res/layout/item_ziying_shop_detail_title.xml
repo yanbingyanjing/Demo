@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:id="@+id/title"
+    android:text="宝贝详情"
+    android:paddingStart="16dp"
+    android:background="@color/white"
+    android:paddingEnd="16dp"
+    android:textStyle="bold"
+    android:textColor="@color/black"
+    android:textSize="12sp" />

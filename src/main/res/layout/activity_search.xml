@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFDF8"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:background="@color/color_FFFDF8" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="@color/color_FFFDF8">
+
+        <ImageView
+            android:id="@+id/search_back"
+            android:layout_width="40dip"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/selector_btn_back"
+            android:scaleType="center"
+            android:src="@drawable/head_back"
+            android:tint="@color/color_title_txt" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/bg_gradient_fdf7f1_fef3d5_16">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_sach"
+                android:tint="@color/color_content_txt" />
+
+            <EditText
+                android:id="@+id/search_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="32dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/rc_ext_search_hint"
+                android:paddingLeft="30dp"
+                android:singleLine="true"
+                android:textColor="@color/color_title_txt"
+                android:textColorHint="@color/color_593B3025"
+                android:textCursorDrawable="@drawable/edittext_color"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/search_dele"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical|right"
+                android:padding="10dp"
+                android:src="@drawable/icon_wrong"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/search_search"
+            android:layout_width="40dip"
+            android:layout_height="50dip"
+            android:layout_gravity="right|center_vertical"
+            android:gravity="center"
+            android:text="@string/rc_ext_search"
+            android:textColor="@color/color_title_txt"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:visibility="invisible"
+            android:layout_gravity="bottom"
+            android:background="@color/line_color" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+            android:id="@+id/search_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/search_shimmer_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+
+
+        <LinearLayout
+            android:id="@+id/search_hint_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="78dp"
+                android:src="@drawable/nodate" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/rc_ext_search_hint_"
+                android:textColor="@color/color_858483"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</LinearLayout>

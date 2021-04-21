@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="6dp"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:id="@+id/firstLouLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/louzhuName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小包包"
+            android:textColor="@color/color_title_txt"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/aite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="回复@"
+            android:textColor="@color/color_content_txt"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/replyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小宝宝"
+            android:textColor="@color/color_title_txt"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/isLouZhu"
+            android:layout_width="25dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/shape_747474_3_button"
+            android:gravity="center"
+            android:text="楼主"
+            android:textColor="@color/white"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/firstTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstLouLay"
+        android:layout_marginTop="5dp"
+        android:text="太可怕了,还有这样的人啊!"
+        android:textColor="@color/color_content_txt"
+        android:textSize="10sp" />
+
+</LinearLayout>

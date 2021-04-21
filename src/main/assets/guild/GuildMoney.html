@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		    <meta name="apple-mobile-web-app-capable" content="yes">
+		    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		    <meta name="format-detection" content="telephone=no">
+		    <meta name="description" content="">
+		    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<script type="text/javascript" src="js/adapter.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/iScroll.js"></script>
+		<script type="text/javascript" src="js/Mdate.js"></script>
+		<script type="text/javascript" src="js/Tool.js"></script>
+		<script type="text/javascript" src="js/echo.min.js"></script>
+		<script type="text/javascript" src="js/layer/layer.js"></script>
+		<link rel="stylesheet" href="css/AnchorsNum.css" />
+		<link rel="stylesheet" href="css/Public.css" />
+		<title>公会盈利</title>
+	</head>
+	<body>
+		<div class="contents">
+			<div class="header">
+				<input type="text" id="dateSelectorOne" placeholder="" value="2020年3月1日">
+				<div class="IncomeMoney">公会抽成（<coin class="coin_zh"></coin>）</br><span id="guildcoin">0</span></div>
+				<div class="IncomeMoney">主播抽成（<coin class="coin_zh"></coin>）</br><span id="anchorcoin">0</span></div>
+			</div>
+			<div class="wapper-tit">
+				<div class="Title id">主播ID</div>
+				<div class="Title time">公会抽成</div>
+				<div class="Title jiangli">主播抽成</div>
+				<div class="Title place"></div>
+			</div>
+			<div class="wapper">
+				<!--<div class="wapperLi">-->
+					<!--<div class="Con idCon">2020190521</div>-->
+					<!--<div class="Con timeCon">200W</div>-->
+					<!--<div class="Con jiangliCon">1500W</div>-->
+					<!--<div class="Con btn">查看详情</div>-->
+				<!--</div>-->
+			</div>
+			<div><span style="text-align: center;width: 100%;display: block;font-size: 12px;color:grey;margin-top: 15px;">暂无更多数据</span></div>
+		</div>
+	</body>
+</html>
+<script>
+    new Mdate("dateSelectorOne");
+    function checkdetail(live_id)
+    {
+        location.href = 'chouchengDetail.html?live_id=' + live_id;
+    }
+
+    var page = 0;
+    var isLoadedAll = false;
+    var isRefreshing = false;
+
+    var myDate = new Date;
+    var year = myDate.getFullYear();
+    var mon = myDate.getMonth() + 1;
+    var date = myDate.getDate();
+    $('#dateSelectorOne').val(year + '年' + mon +'月' + date +'日')
+    $('#dateSelectorOne').attr('data-year',year)
+    $('#dateSelectorOne').attr('data-month',mon)
+    $('#dateSelectorOne').attr('data-day',date)
+
+    /// 延迟加载图片
+    echo.init({
+        offset: 100,
+        throttle: 250,
+        unload: false
+    });
+
+    /// 监听 scroll bottom
+    window.addEventListener('scroll', () => {
+        var clientHeight = document.documentElement.clientHeight || window.innerHeight; // 可视区域高度
+        var scrollHeight = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop; // 滚动高度
+        var offsetHeight = document.body.offsetHeight || document.documentElement.offsetHeight; // 文档高度
+
+        if ((clientHeight + scrollHeight) >= (offsetHeight - 100)) {
+            if (isLoadedAll == false) {
+                loadData();
+            }
+        }
+    });
+    function loadData() {
+        var data_year = $('#dateSelectorOne').attr('data-year');
+        var data_month = $('#dateSelectorOne').attr('data-month');
+        var data_date = $('#dateSelectorOne').attr('data-day');
+        if (data_year != undefined){
+            year = data_year;
+        }
+        if (data_month != undefined){
+            mon = data_month;
+        }
+        if (data_date != undefined){
+            date = data_date;
+        }
+        var time = year + '-' + mon + '-' + date;
+
+        if (isRefreshing) {
+            return;
+        }
+
+        isRefreshing = true
+        page++;
+
+        tokeninit(function () {
+            $.ajax({
+                headers: {
+                    "XX-Token": localStorage.getItem("XX-Token"),
+                    "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+                },
+                url: localStorage.getItem("domain") + 'app/guild/guildProfit',
+                type: "post",
+                data: { page: page ,time:time},
+                dataType: 'json',
+                cache: false,
+                async: true,
+                success: function (res) {
+                    if (res.code == 1) {
+                        $('#guildcoin').text(res.data.guild_total_coin);
+                        $('#anchorcoin').text(res.data.anchor_total_coin);
+                        loadMoreUI(res.data.list);
+                    } else {
+                        isRefreshing = false;
+                        layer.msg(res.msg);
+                    }
+                },
+                error: function () {
+                    isRefreshing = false;
+                    layer.msg('网络异常');
+                }
+            });
+        });
+
+    };
+
+    function loadMoreUI(list) {
+
+        for (obj in list) {
+            var str = '';
+            str += '<div class="wapperLi">';
+            str += '<div class="Con idCon">' + list[obj]['anchor_id'] + '</div>';
+            str += '<div class="Con timeCon">' + list[obj]['guild_total_coin'] + '</div>';
+            str += '<div class="Con jiangliCon">' + list[obj]['anchor_total_coin'] + '</div>';
+            str += '<div class="Con btn" onclick="checkdetail( ' +  list[obj]['live_id'] + ' )">查看详情</div>';
+            str += '</div>';
+            $(".wapper").append(str);
+        };
+
+        /// 判断加载出来的一页数据大于5条才会有加载更多
+        if (list.length < 15) {
+            isLoadedAll = true;
+        }
+
+        isRefreshing = false;
+
+        var coin_zh = localStorage.getItem('coin_zh');
+        if (coin_zh == undefined || coin_zh == null || coin_zh == '' || coin_zh == 'undefined'){
+            coin_zh = '金蛋';
+        }
+        console.log(coin_zh);
+        $('.coin_zh').html(coin_zh);
+    };
+
+    loadData();
+</script>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/color_theme">
+
+    <ImageView
+        android:id="@+id/ac_iv_press_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ac_back_icon" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:background="#FFE7E3E3" />
+
+    <EditText
+        android:id="@+id/ac_et_search"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:textCursorDrawable="@drawable/edittext_color"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_edit_text_white"
+        android:drawableLeft="@drawable/ac_et_search_icon"
+        android:drawablePadding="10dp"
+        android:drawableRight="@drawable/ac_search_cancel_icon"
+        android:focusableInTouchMode="true"
+        android:hint="@string/Search"
+        android:imeActionLabel=""
+        android:imeOptions="actionSearch"
+        android:inputType="textNoSuggestions"
+        android:maxLines="1"
+        android:textColor="@color/color_000000"
+        android:textColorHint="@color/color_838383"
+        android:textSize="16dp" />
+</LinearLayout>

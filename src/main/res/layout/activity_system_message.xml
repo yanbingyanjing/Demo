@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_content_bg"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:background="@color/color_theme" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+            android:id="@+id/system_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/system_shimmer_recycler_view"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+
+        </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_theme">
+
+            <ImageView
+                android:id="@+id/system_back"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:background="@null"
+                android:scaleType="center"
+                android:src="@drawable/head_back"
+                android:tint="@color/color_title_txt" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dip"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/de_actionbar_sub_system"
+                android:textColor="@color/color_title_txt"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/system_dele_iv"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_gravity="right"
+                android:background="@null"
+                android:scaleType="center"
+                android:src="@drawable/conversation_dele"
+                android:tint="@color/color_title_txt" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.0px"
+                android:layout_gravity="bottom"
+                android:background="@color/line_color" />
+        </FrameLayout>
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

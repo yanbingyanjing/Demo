@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="66dp" />
+
+    <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/live_home_appbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:orientation="vertical"
+                app:elevation="0dp">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:contentScrim="@android:color/transparent"
+                    app:layout_scrollFlags="scroll">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/viewpager"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            android:paddingStart="20dp"
+                            android:paddingLeft="20dp"
+                            android:paddingEnd="20dp"
+                            android:paddingRight="20dp" />
+
+                        <LinearLayout
+                            android:id="@+id/indicator_ll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="6dp"
+                            android:orientation="horizontal" />
+
+                        <FrameLayout
+                            android:id="@+id/live_list_notice_fl"
+                            android:layout_width="match_parent"
+                            android:layout_height="26dp"
+                            android:background="@color/color_f5f5f5"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="0dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/home_header_msg_icon"
+                                android:tint="@color/color_style" />
+
+                            <com.yjfshop123.live.ui.widget.MarqueeTextView
+                                android:id="@+id/live_list_notice_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="22dp"
+                                android:layout_marginRight="26dp"
+                                android:textColor="@color/color_333333"
+                                android:textSize="12dp"
+                                app:back_focused="false" />
+
+                            <ImageView
+                                android:id="@+id/live_list_notice_close"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:layout_gravity="center_vertical|right"
+                                android:padding="6dp"
+                                android:src="@drawable/ac_cs_dialog_cancel"
+                                android:tint="@color/color_333333" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/live_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <com.jpeng.jptabbar.PagerSlidingTabStrip
+                            android:id="@+id/live_psts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/color_666666"
+                            android:textSize="14sp"
+                            app:pstsDividerColor="@android:color/transparent"
+                            app:pstsIndicatorColor="@color/color_style"
+                            app:pstsIndicatorHeight="2dp"
+                            app:pstsScaleZoomMax="0.1"
+                            app:pstsShouldExpand="false"
+                            app:pstsTabPaddingLeftRight="12dp"
+                            app:pstsTextSelectedColor="@color/color_000000"
+                            app:pstsUnderlineColor="@android:color/transparent" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/line_color" />
+
+                </LinearLayout>
+
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill_vertical"
+                android:fillViewport="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/h_vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </android.support.v4.widget.NestedScrollView>
+
+        </android.support.design.widget.CoordinatorLayout>
+    </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+
+</LinearLayout>

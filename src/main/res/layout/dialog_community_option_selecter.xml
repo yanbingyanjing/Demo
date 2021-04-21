@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/dialog_take_look"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/service_dialog_top_bg"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lookLouzhu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_community_option_looklouzhu"
+            android:textColor="@color/color_title_txt"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_select_type"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/linerlayout_water_sel"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lookFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_community_option_looktype1"
+            android:textColor="@color/color_title_txt"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_select_jubao"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/linerlayout_water_sel"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_community_option_jubao"
+            android:textColor="@color/color_title_txt"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_select_block"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/linerlayout_water_sel"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拉黑"
+            android:textColor="@color/color_title_txt"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_select_del_comm"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/linerlayout_water_sel"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除帖子"
+            android:textColor="@color/color_title_txt"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_select_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/linerlayout_water_sel"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share_dialog_cancel"
+            android:textColor="@color/color_title_txt"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

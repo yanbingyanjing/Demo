@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog">
+
+        <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+            android:id="@+id/lvi2_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            app:sriv_left_bottom_corner_radius="5dip"
+            app:sriv_left_top_corner_radius="5dip"
+            app:sriv_right_bottom_corner_radius="5dip"
+            app:sriv_right_top_corner_radius="5dip" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="11dp"
+                android:layout_gravity="center"
+                android:paddingTop="1dp"
+                android:src="@drawable/video_list_btn_praise" />
+
+            <TextView
+                android:id="@+id/lvi2_praise_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="3dp"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="9dp" />
+
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/lvi2_del"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/transparent"
+            android:src="@drawable/video_list_btn_del" />
+
+    </FrameLayout>
+
+</LinearLayout>

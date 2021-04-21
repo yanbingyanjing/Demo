@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/egg"
+    android:paddingStart="24dp"
+    android:gravity="center"
+    android:paddingEnd="24dp"
+    android:background="@drawable/bg_select_xuanpin_xunzhang"
+    android:layout_width="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:textColor="@color/xunpin_xunzhang"
+    android:textSize="14sp"
+    android:layout_height="32dp"/>
+

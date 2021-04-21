@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#263862">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="录屏直播中……"
+        android:textColor="@color/color_style"
+        android:textSize="16dp"
+        android:textStyle="italic" />
+
+    <RelativeLayout
+        android:id="@+id/rl_controllLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <include
+            android:id="@+id/layout_live_pusher_info"
+            layout="@layout/layout_live_pusher_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp" />
+
+        <TextView
+            android:id="@+id/tv_member_counts"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="27dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/pusher_info_background"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="0"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="10sp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_user_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="45dp"
+            android:layout_toRightOf="@+id/layout_live_pusher_info" />
+
+        <!--<TextView
+            android:id="@+id/tv_private_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:drawablePadding="5dp"
+            android:onClick="onClick"
+            android:paddingLeft="6dp"
+            android:paddingTop="3dp"
+            android:paddingRight="6dp"
+            android:paddingBottom="3dp"
+            android:text="@string/private_mode_off"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone" />-->
+
+        <FrameLayout
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="15dp">
+
+            <Button
+                android:id="@+id/btn_message_input"
+                android:layout_width="@dimen/live_btn_size"
+                android:layout_height="@dimen/live_btn_size"
+                android:background="@mipmap/icon_live_chat"
+                android:onClick="onClick" />
+
+            <Button
+                android:id="@+id/btn_close"
+                android:layout_width="@dimen/live_btn_size"
+                android:layout_height="@dimen/live_btn_size"
+                android:layout_gravity="right"
+                android:background="@mipmap/icon_live_close"
+                android:onClick="onClick" />
+        </FrameLayout>
+
+        <ListView
+            android:id="@+id/im_msg_listview"
+            android:layout_width="250dp"
+            android:layout_height="10dp"
+            android:layout_above="@id/tool_bar"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:cacheColorHint="#00000000"
+            android:divider="#3c421b1b"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="none"
+            android:stackFromBottom="true"
+            android:transcriptMode="normal" />
+
+        <TextView
+            android:id="@+id/im_msg_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tool_bar"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/shape_cc000000_20_button"
+            android:backgroundTint="@color/white"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:text="有新消息"
+            android:textColor="@color/color_style"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+        <!--点赞动画-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp">
+
+            <com.yjfshop123.live.live.live.common.widget.like.TCHeartLayout
+                android:id="@+id/heart_layout"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:focusable="true" />
+        </RelativeLayout>
+        <!--点赞动画-->
+
+        <!--弹幕-->
+        <FrameLayout
+            android:id="@+id/danmakuView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--全服提示-->
+        <FrameLayout
+            android:id="@+id/promptView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--gift-->
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gift_gif"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop" />
+
+        <com.opensource.svgaplayer.SVGAImageView
+            android:id="@+id/gift_svga"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            app:autoPlay="true"
+            app:loopCount="1" />
+        <!--gift-->
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

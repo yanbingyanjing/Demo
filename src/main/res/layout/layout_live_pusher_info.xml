@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="35dp"
+    android:background="@drawable/pusher_info_background"
+    android:orientation="horizontal"
+    android:paddingLeft="1dp"
+    android:paddingTop="1dp"
+    android:paddingRight="1dp"
+    android:paddingBottom="1dp"
+    tools:ignore="contentDescription">
+
+    <com.yjfshop123.live.server.widget.CircleImageView
+        android:id="@+id/iv_head_icon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash_logo" />
+
+    <LinearLayout
+        android:id="@+id/layout_live_pusher_info_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/iv_head_icon"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_broadcasting_name"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_host_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/layout_live_pusher_info_follow"
+        android:layout_width="40dp"
+        android:layout_height="26dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="-10dp"
+        android:src="@mipmap/guanzhong_guanzhu"
+        android:layout_toRightOf="@+id/layout_live_pusher_info_ll"
+        android:gravity="center"
+        android:visibility="gone" />
+
+</RelativeLayout>

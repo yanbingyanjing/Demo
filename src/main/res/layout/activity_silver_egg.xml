@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/heijin"
+
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="39dp"
+            android:layout_marginEnd="20dp">
+
+            <com.yjfshop123.live.server.widget.RoundImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@+id/one"
+                android:layout_alignBottom="@+id/one"
+
+                android:scaleType="fitXY"
+                android:src="@mipmap/bg_my_gold"
+                app:radius="8dp" />
+
+            <LinearLayout
+                android:id="@+id/one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="20dp"
+                android:paddingBottom="39dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="vertical"
+                        android:paddingStart="22dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/yongyou"
+                            android:textColor="@color/color_CEAF82"
+                            android:textSize="18sp"
+                           />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/total_income_two"
+
+                            android:textColor="@color/color_CEAF82"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+
+                            android:text="@string/can_use"
+                            android:textColor="@color/color_CEAF82"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/today_income"
+
+                            android:textColor="@color/color_CEAF82"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/total_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="end"
+                            android:paddingEnd="22dp"
+                            android:textColor="@color/color_CEAF82"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/total_income_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="12dp"
+                            android:gravity="end"
+                            android:paddingEnd="22dp"
+                            android:textColor="@color/color_CEAF82"
+                            android:textSize="14sp" />
+
+
+                        <TextView
+                            android:id="@+id/can_use_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="12dp"
+                            android:gravity="end"
+                            android:paddingEnd="22dp"
+                            android:textColor="@color/color_CEAF82"
+                            android:textSize="14sp" />
+
+
+                        <TextView
+                            android:id="@+id/toady_income_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="12dp"
+                            android:gravity="end"
+                            android:paddingEnd="22dp"
+                            android:textColor="@color/color_CEAF82"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/turnout_egg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="44dp"
+                    android:background="@drawable/target_name_bg"
+                    android:paddingStart="35dp"
+                    android:paddingTop="11dp"
+                    android:paddingEnd="35dp"
+                    android:paddingBottom="11dp"
+                    android:text="@string/turn_out_silver_egg"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yjfshop123.live.server.widget.SelectableRoundedImageView
+    android:id="@+id/images"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:scaleType="fitXY"
+    app:sriv_left_bottom_corner_radius="4dip"
+    app:sriv_left_top_corner_radius="4dip"
+    android:layout_marginEnd="10dp"
+    app:sriv_right_bottom_corner_radius="4dip"
+    app:sriv_right_top_corner_radius="4dip"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" />

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/guige"
+    android:paddingStart="10dp"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:gravity="center"
+    android:paddingEnd="10dp"
+    android:background="@drawable/bg_select_xuanpin_xunzhang"
+    android:layout_width="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:textColor="@color/xunpin_xunzhang"
+    android:textSize="12sp"
+    android:layout_height="wrap_content"/>
+

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.youth.banner.Banner
+        android:id="@+id/game_banner"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:image_scale_type="center_crop"
+        app:indicator_drawable_selected="@color/red_x"
+        app:indicator_drawable_unselected="@color/white"
+        app:indicator_height="4dp"
+        app:indicator_margin="4dp"
+        app:indicator_width="4dp" />
+
+    <FrameLayout
+        android:id="@+id/live_list_notice_fl"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:background="@color/color_f5f5f5"
+        android:paddingLeft="8dp"
+        android:paddingRight="0dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/home_header_msg_icon"
+            android:tint="@color/color_style" />
+
+        <com.yjfshop123.live.ui.widget.MarqueeTextView
+            android:id="@+id/live_list_notice_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="26dp"
+            android:textColor="@color/color_333333"
+            android:textSize="12dp"
+            app:back_focused="false" />
+
+        <ImageView
+            android:id="@+id/live_list_notice_close"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center_vertical|right"
+            android:padding="6dp"
+            android:src="@drawable/ac_cs_dialog_cancel"
+            android:tint="@color/color_333333" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7.5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.5"
+                android:text="账户余额\n￥0.00"
+                android:textColor="@color/color_333333"
+                android:textSize="14dp" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/line_color" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:orientation="horizontal">
+
+            <com.yjfshop123.live.live.live.common.widget.gift.view.DrawableTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:text="充值"
+                android:textColor="@color/color_333333"
+                android:textSize="12dp"
+                app:dt_top_drawable="@drawable/icon_game_recharge"
+                app:dt_top_height="32dp"
+                app:dt_top_width="32dp" />
+
+            <com.yjfshop123.live.live.live.common.widget.gift.view.DrawableTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:text="提现"
+                android:textColor="@color/color_333333"
+                android:textSize="12dp"
+                app:dt_top_drawable="@drawable/icon_game_withdrawal"
+                app:dt_top_height="32dp"
+                app:dt_top_width="32dp" />
+
+            <com.yjfshop123.live.live.live.common.widget.gift.view.DrawableTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:text="客服"
+                android:textColor="@color/color_333333"
+                android:textSize="12dp"
+                app:dt_top_drawable="@drawable/icon_game_service"
+                app:dt_top_height="32dp"
+                app:dt_top_width="32dp" />
+
+            <com.yjfshop123.live.live.live.common.widget.gift.view.DrawableTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:text="额度转换"
+                android:textColor="@color/color_333333"
+                android:textSize="12dp"
+                app:dt_top_drawable="@drawable/icon_game_switch"
+                app:dt_top_height="32dp"
+                app:dt_top_width="32dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_gravity="bottom"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7.5">
+
+            <LinearLayout
+                android:id="@+id/game_controls"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <FrameLayout
+            android:id="@+id/game_fl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+</LinearLayout>

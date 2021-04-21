@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/dataGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+
+
+            <com.yjfshop123.live.server.widget.CircleImageView
+                android:id="@+id/authImg"
+                android:layout_width="65dp"
+                android:layout_height="65dp" />
+
+            <ImageView
+                android:id="@+id/vipFlag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:src="@drawable/icon_vip" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/lookTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text=""
+            android:textColor="@color/color_000000"
+            android:textSize="12sp" />
+
+        <GridView
+            android:id="@+id/lookMeGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="40dp"
+            android:horizontalSpacing="25dp"
+            android:numColumns="3"
+            android:scrollbars="none"
+            android:verticalSpacing="30dp" />
+
+        <LinearLayout
+            android:id="@+id/vipLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/guanzhu_me_2"
+                android:textColor="@color/color_000000"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/vipOpen"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="45dp"
+                android:background="@drawable/shape_ffd100_20_button"
+                android:text="@string/guanzhu_me_1"
+                android:textColor="@color/color_ffffff"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/noDataLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/noData"
+            android:layout_width="160dp"
+            android:layout_height="78dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/nodate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noData"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/nodata_1"
+            android:textColor="#8c8c8c"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

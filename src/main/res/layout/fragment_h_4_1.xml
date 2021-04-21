@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.jpeng.jptabbar.PagerSlidingTabStrip
+            android:id="@+id/fragment_h_4_1_psts"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:textColor="@color/color_6D6D6C"
+            android:textSize="14sp"
+            app:pstsDividerColor="@android:color/transparent"
+            app:pstsIndicatorColor="@color/color_style"
+            app:pstsIndicatorHeight="2dp"
+            app:pstsScaleZoomMax="0.1"
+            app:pstsShouldExpand="false"
+            app:pstsTabPaddingLeftRight="36dp"
+            app:pstsTextSelectedColor="@color/white"
+            app:pstsUnderlineColor="@android:color/transparent" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:visibility="gone"
+        android:background="@color/line_color" />
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/fragment_h_4_1_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

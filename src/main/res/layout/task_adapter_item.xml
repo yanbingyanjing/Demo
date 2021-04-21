@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@color/white">
+
+        <com.yjfshop123.live.server.widget.CircleImageView
+            android:id="@+id/task_adapter_item_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop" />
+
+        <!--app:civ_border_color="@color/color_style"
+        app:civ_border_width="2dp"-->
+
+        <ImageView
+            android:id="@+id/task_adapter_item_vip_iv"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="36dp"
+            android:layout_marginBottom="14dp"
+            android:src="@drawable/icon_vip"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="60dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/task_adapter_item_nickname_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/transparent"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/task_adapter_item_cost_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="@color/rc_text_color_secondary"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/task_adapter_item_mi_tv"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical|right"
+            android:background="@drawable/ql_dialog_bg3"
+            android:gravity="center"
+            android:text="@string/task_4"
+            android:textColor="@color/color_style"
+            android:textSize="12dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/task_adapter_item_user_tv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/oval_bg"
+            android:gravity="center"
+            android:text="@string/task_5"
+            android:textColor="@color/color_style"
+            android:textSize="12dp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color" />-->
+
+</LinearLayout>

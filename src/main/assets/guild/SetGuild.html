@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="description" content="">
+	<meta http-equiv="x-dns-prefetch-control" content="on">
+	<title>创建公会</title>
+	<script type="text/javascript" src="js/adapter.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/Tool.js"></script>
+	<script type="text/javascript" src="js/layer/layer.js"></script>
+	<link rel="stylesheet" href="css/SetGuild.css" />
+	<link rel="stylesheet" href="css/Public.css" />
+</head>
+
+<body>
+	<div class="contents">
+		<div class="wapper">
+			<div class="company">
+				<div class="company-title">公会名称</div>
+				<input class="company-con" placeholder="请输入您要创建的公会名称" name="name"/>
+			</div>
+			<div class="name">
+				<div class="name-title">个人姓名</div>
+				<input class="name-con" placeholder="请输入您的姓名" name="username" />
+			</div>
+			<div class="tel">
+				<div class="tel-title">联系方式</div>
+				<input class="tel-con" placeholder="请输入QQ/微信/手机号" name="contact" />
+			</div>
+			<div class="id">
+				<div class="id-title">身份证号</div>
+				<input class="id-con" placeholder="请填写您的身份证号" maxlength="18" name="ID_card" />
+			</div>
+			<div class="CompanyProfile">
+				<div class="CompanyProfile-title">公会简介</div>
+				<textarea class="CompanyProfile-con" placeholder="请简单介绍一下您的公会" name="desc" id="desc"></textarea>
+			</div>
+			<div class="PhotoUpload">
+				<div class="PhotoUpload-title">证件图片</div>
+				<div class="photos">
+					<div class="zheng" onclick="take('addfile1','ID_card_positive')">
+						<div class="img1"><img src="image/add.png" id="addfile1"></div>
+						<div class="img1-bottom">证件正面照</div>
+						<input type="hidden" name="ID_card_positive" id="ID_card_positive">
+					</div>
+					<div class="fan" onclick="take('addfile2','ID_card_back')">
+						<div class="img1"><img src="image/add.png" id="addfile2"></div>
+						<div class="img1-bottom">证件背面照</div>
+						<input type="hidden" name="ID_card_back" id="ID_card_back">
+					</div>
+				</div>
+			</div>
+			<div class="logo">
+				<div class="logo-title">公会标志</div>
+				<div class="photos">
+					<div class="zheng" onclick="take('addfile3','icon')">
+						<div class="img1"><img src="image/add.png" id="addfile3"></div>
+						<div class="img1-bottom">公会标志</div>
+						<input type="hidden" name="icon" id="icon">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="submit">提交申请</div>
+	</div>
+</body>
+
+</html>
+<script>
+	tokeninit(function () {
+		$(".submit").on("click", function () {
+			var name = $("input[name='name']").val();
+			var icon = $("input[name='icon']").val();
+			var desc = $(".CompanyProfile-con").val();
+			var username = $("input[name='username']").val();
+			var contact = $("input[name='contact']").val();
+			var ID_card = $("input[name='ID_card']").val();
+			var ID_card_positive = $("input[name='ID_card_positive']").val();
+			var ID_card_back = $("input[name='ID_card_back']").val();
+			if (name == '' || icon == '' || desc == '' || username == '' || contact == '' || ID_card == '' || ID_card_positive == '' || ID_card_back == '') {
+				layer.msg('信息未填写完整');
+			} else {
+				$.ajax({
+					headers: {
+						"XX-Token": localStorage.getItem("XX-Token"),
+						"XX-Device-Type": localStorage.getItem("XX-Device-Type")
+					},
+					url: localStorage.getItem("domain") + 'app/guild/addGuildList',
+					type: "post",
+					data: { name: name, icon: icon, desc: desc, username: username, contact: contact, ID_card: ID_card, ID_card_positive: ID_card_positive, ID_card_back: ID_card_back },
+					dataType: 'json',
+					cache: false,
+					async: true,
+					success: function (res) {
+						if (res.code == 1) {
+							layer.msg('公会创建成功,等待审核');
+							setInterval(function () {
+                                location.replace("shenhe.html?type=1");
+							}, 1500)
+						} else {
+							layer.msg(res.msg);
+						}
+					},
+					error: function () {
+						layer.msg('网络异常');
+					}
+				});
+			}
+		});
+	});
+
+	function take(param1, param2) {
+
+		receiveImgUrlNative({ "imgval": param1, "inputval": param2 }, (json) => {
+
+			var imgval = json.param.imgval;
+			var inputval = json.param.inputval;
+			var imgUri = json.data.imgUri;
+
+			$("#" + imgval).attr('src', localStorage.getItem("cosdomain") + imgUri);
+			$("#" + inputval).val(imgUri);
+		});
+	}
+
+</script>

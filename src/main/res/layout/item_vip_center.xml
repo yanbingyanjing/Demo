@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_theme"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/imgIcon"
+        android:layout_width="30.0dip"
+        android:layout_height="30.0dip"
+        android:layout_marginLeft="8.5dip"
+        android:layout_marginTop="14.0dip"
+        android:gravity="center"
+        android:textColor="@color/color_title_txt"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tvExpire"
+        android:layout_width="80.0dip"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10.0dip"
+        android:layout_toRightOf="@+id/imgIcon"
+        android:lines="1"
+        android:text="0"
+        android:textColor="@color/color_title_txt"
+        android:textSize="14.0sp" />
+
+    <TextView
+        android:id="@+id/tvPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="9.5dip"
+        android:background="@drawable/shape_ffd100_20_button"
+        android:paddingLeft="18dip"
+        android:paddingTop="5dip"
+        android:paddingRight="18dip"
+        android:paddingBottom="5dip"
+        android:text="@string/centee_foot_10"
+        android:textColor="@color/white"
+        android:textSize="14.0sp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/tvUnitPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10.0dip"
+            android:text="0.27元/天"
+            android:textColor="@color/color_f12c20"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/imgRecommend"
+            android:layout_width="30.399994dip"
+            android:layout_height="14.799988dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_toRightOf="@+id/tvUnitPrice"
+            android:gravity="center"
+            android:src="@drawable/vip_tuijian"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvUnitPrice"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5.0dip"
+            android:textColor="@color/color_content_txt"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_below="@+id/imgIcon"
+        android:layout_marginTop="10dip"
+        android:background="@color/line_color" />
+</RelativeLayout>

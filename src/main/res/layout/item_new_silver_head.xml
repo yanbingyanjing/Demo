@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="14dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/gold_price_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="52dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="22dp"
+            android:src="@mipmap/gold_egg" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gold_price"
+                android:textColor="@color/color_3B3026"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="62dp"
+                    android:layout_height="17dp"
+                    android:src="@mipmap/current_price" />
+
+                <TextView
+                    android:id="@+id/current_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/color_302011"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/current_up_down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_f8e6d8_4"
+                    android:drawableLeft="@mipmap/up_rise"
+                    android:drawablePadding="4dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="5.5%"
+                    android:textColor="@color/color_302011"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="27dp"
+            android:src="@mipmap/right_three" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="19dp"
+      />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="13dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/one"
+            android:layout_alignBottom="@+id/one"
+            android:scaleType="fitXY"
+            android:src="@mipmap/bg_new_silver" />
+
+        <LinearLayout
+            android:id="@+id/one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="130dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/loack_yindan"
+                        android:textColor="@color/color_C9B4B1AB"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/lock_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/color_B4B1AB"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/has_release_silver"
+                        android:textColor="@color/color_C9B4B1AB"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/release_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/color_B4B1AB"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/exchange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:drawablePadding="4dp"
+                android:paddingStart="10dp"
+                android:paddingTop="4dp"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="12sp"
+                android:textColor="@color/color_3B3026"
+                android:paddingBottom="4dp"
+                android:paddingEnd="10dp"
+                android:text="@string/exchange_gold"
+                android:background="@drawable/bg_graditent_ffd7af_b28d51_12"
+                android:drawableLeft="@mipmap/exchange_gold"/>
+        </LinearLayout>
+        <View
+            android:layout_width="40dp"
+            android:rotation="90"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="27dp"
+            android:background="@drawable/xuxian_new"
+            android:layout_height="40dp" />
+    </RelativeLayout>
+
+</LinearLayout>

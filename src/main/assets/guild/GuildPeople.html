@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		    <meta name="apple-mobile-web-app-capable" content="yes">
+		    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		    <meta name="format-detection" content="telephone=no">
+		    <meta name="description" content="">
+		    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<title>公会成员</title>
+		<script type="text/javascript" src="js/adapter.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/Tool.js"></script>
+		<script type="text/javascript" src="js/echo.min.js"></script>
+		<script type="text/javascript" src="js/layer/layer.js"></script>
+		<link rel="stylesheet" href="css/GuildPeople.css" />
+		<link rel="stylesheet" href="css/Public.css" />
+	</head>
+	<body>
+		<div class="contents">
+			<div class="wapper">
+
+				<!--<div class="list">-->
+					<!--<div class="photo"><img src="image/photo.png"></div>-->
+					<!--<div class="infomation">-->
+						<!--<div class="info-name">公会成员名<span class="girl">22</span></div>-->
+						<!--<div class="info-num">-->
+							<!--<div class="fans">粉丝数：580</div>-->
+							<!--<div class="num">抽成：20%</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="btn" >踢出</div>-->
+				<!--</div>-->
+
+			</div>
+			<div><span style="text-align: center;width: 100%;display: block;font-size: 14px;color:grey">暂无更多数据</span></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+
+    var page = 0;
+    var isLoadedAll = false;
+    var isRefreshing = false;
+
+    /// 延迟加载图片
+    echo.init({
+        offset: 100,
+        throttle: 250,
+        unload: false
+    });
+
+    /// 监听 scroll bottom
+    window.addEventListener('scroll', () => {
+        var clientHeight = document.documentElement.clientHeight || window.innerHeight; // 可视区域高度
+        var scrollHeight = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop; // 滚动高度
+        var offsetHeight = document.body.offsetHeight || document.documentElement.offsetHeight; // 文档高度
+
+        if ((clientHeight + scrollHeight) >= (offsetHeight - 100)) {
+            if (isLoadedAll == false) {
+                loadData();
+            }
+        }
+    });
+
+    /// 加载数据
+    function loadData() {
+
+        if (isRefreshing) {
+            return;
+        }
+
+        isRefreshing = true
+        page++;
+
+        tokeninit(function(){
+            $.ajax({
+                headers: {
+                    "XX-Token": localStorage.getItem("XX-Token"),
+                    "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+                },
+                url: localStorage.getItem("domain") + 'app/guild/getGuildUser',
+                type: "post",
+                data: { page: page},
+                dataType: 'json',
+                cache: false,
+                async: true,
+                success: function (res) {
+                    if (res.code == 1) {
+                        loadMoreUI(res.data.list);
+                    } else {
+                        isRefreshing = false;
+                        layer.msg(res.msg);
+                    }
+                },
+                error: function () {
+                    isRefreshing = false;
+                    layer.msg('网络异常');
+                }
+            });
+        });
+
+    };
+
+    function loadMoreUI(list) {
+
+        for (obj in list) {
+
+            var str = '';
+			str += '<div class="list">';
+            str += '<div class="photo"><img src="' + list[obj]['avatar'] + '"></div>';
+            str += '<div class="infomation">';
+
+            if (list['sex'] == 2){
+                str += '<div class="info-name">' + list[obj]['user_nickname'] + '<span class="girl">' + list[obj]['age'] + '</span></div>';
+            } else {
+                str += '<div class="info-name">' + list[obj]['user_nickname'] + '<span class="boy">' + list[obj]['age'] + '</span></div>';
+			}
+
+            str += '<div class="info-num">';
+            str += '<div class="fans">粉丝数：' + list[obj]['fansnum'] + '</div>';
+            str += '<div class="num">抽成：' + list[obj]['divide_into'] + '</div>';
+            str += '</div>';
+            str += '</div>';
+            str += '<div class="btn" onclick="kickout(' + list[obj]['user_id'] + ')">踢出</div>';
+            str += '</div>';
+
+            $(".wapper").append(str);
+
+        };
+
+        /// 判断加载出来的一页数据大于5条才会有加载更多
+        if (list.length < 5) {
+            isLoadedAll = true;
+        }
+
+        isRefreshing = false;
+    };
+
+    loadData();
+
+    function kickout(user_id){
+        $.ajax({
+            headers: {
+                "XX-Token": localStorage.getItem("XX-Token"),
+                "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+            },
+            url: localStorage.getItem("domain") + 'app/guild/kickOutGuildUser',
+            type: "post",
+            data: { user_id: user_id},
+            dataType: 'json',
+            cache: false,
+            async: true,
+            success: function (res) {
+                if (res.code == 1) {
+                    layer.msg('踢出成功');
+                    setInterval(function(){
+                        location.reload();
+                    },1000)
+                } else {
+                    isRefreshing = false;
+                    layer.msg(res.msg);
+                }
+            },
+            error: function () {
+                isRefreshing = false;
+                layer.msg('网络异常');
+            }
+        });
+	}
+</script>

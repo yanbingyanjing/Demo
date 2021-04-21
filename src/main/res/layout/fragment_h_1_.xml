@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/h_1_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:scaleType="fitXY"
+        android:src="@drawable/ql_rw_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/h_1_top_view"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:background="@color/transparent"
+            android:visibility="gone" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/h_1_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+          />
+
+        <FrameLayout
+            android:id="@+id/h_1_top_fl"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+
+            android:layout_marginTop="22dp"
+            android:background="@color/transparent">
+
+            <com.jpeng.jptabbar.PagerSlidingTabStrip
+                android:id="@+id/h_1_nts_sty"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+
+                app:pstsDividerPaddingTopBottom="5dp"
+                app:pstsIndicatorColor="@color/color_B28D51"
+                app:pstsDividerColor="@android:color/transparent"
+                app:pstsIndicatorHeight="2dp"
+                app:pstsScaleZoomMax="0.2"
+                app:pstsShouldExpand="false"
+                app:pstsTabPaddingLeftRight="12dp"
+                app:pstsTextSelectedColor="@color/white"
+                app:pstsUnderlineColor="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/h_1_list"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_gravity="center_vertical|right"
+                android:background="@null"
+                android:scaleType="center"
+                android:src="@drawable/f_h_list_icon"
+              />
+
+            <ImageView
+                android:id="@+id/h_1_search"
+                android:layout_width="35dip"
+                android:layout_height="40dip"
+                android:layout_gravity="center_vertical|right"
+                android:background="@null"
+                android:scaleType="center"
+                android:src="@drawable/conversation_search"
+                android:tint="@color/white"
+                android:visibility="gone" />
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

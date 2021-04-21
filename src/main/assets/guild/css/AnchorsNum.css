@@ -1,0 +1,67 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.contents{
+	width: 100%;
+	height: 13.34rem;
+	background-color: #fff;
+}
+.header{
+	background-image: linear-gradient(87deg,#fd7600 0%, #f85212 100%);
+	background-size:contain;
+	padding: 0.42rem 0.2rem;
+	display: flex;
+	justify-content: space-around;
+}
+input{
+	width: 2.87rem;
+	height: 0.95rem;
+	background: url(../image/date.png) no-repeat 90% 60%;
+	background-size: 9%;
+	/* float: left; */
+	margin-top: -0.4rem;
+	border: none;
+	background-color: transparent;
+	color: #FFFFFF;
+	margin: 0.08rem 0;
+	font-size: 0.3rem;
+	border-right: solid 0.02rem #fff;
+	
+}
+.IncomeMoney{
+	color: #FFFFFF;
+	font-size: 0.24rem;
+	text-align: center;
+	line-height: 0.5rem;
+}
+.IncomeMoney span{
+	font-size: 0.34rem;
+}
+.wapper{
+	width: 7.1rem;
+	margin: 0 auto;
+}
+.wapper-tit{
+	display: flex;
+	justify-content: space-around;
+	color: #717171;
+	font-size: 0.28rem;
+	letter-spacing: 0.05rem;
+	margin: 0.3rem 0;
+}
+.wapperLi{
+	display: flex;
+	justify-content: space-around;
+	color: #353535;
+	font-size: 0.24rem;
+	margin: 0.3rem 0;
+}
+.btn{
+	color: #ff5519;
+	font-size: 0.24rem;
+}
+.Title,.Con{
+	width: 20%;
+	text-align: center;
+}

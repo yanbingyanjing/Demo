@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_theme"
+    android:orientation="vertical">
+
+    <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/reward_appbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:orientation="vertical"
+                app:elevation="0dp">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:contentScrim="@android:color/transparent"
+                    app:layout_scrollFlags="scroll">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:id="@+id/reward_fl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/reward_bg">
+
+                            <TextView
+                                android:id="@+id/reward_rules"
+                                android:layout_width="wrap_content"
+                                android:layout_height="26dp"
+                                android:layout_gravity="right"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/sele_reward"
+                                android:gravity="center"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="4dp"
+                                android:text="@string/reward_2"
+                                android:textColor="@color/color_333333"
+                                android:textSize="12dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="40dp"
+                                android:layout_marginTop="18dp"
+                                android:layout_marginRight="40dp"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/reward_earn_money"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.0"
+                                    android:background="@drawable/reward_btn"
+                                    android:text="@string/reward_3"
+                                    android:textColor="@color/white"
+                                    android:textSize="14dp" />
+
+                                <Button
+                                    android:id="@+id/reward_earn_money_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="1.0"
+                                    android:background="@drawable/reward_btn"
+                                    android:text="@string/reward_4"
+                                    android:textColor="@color/white"
+                                    android:textSize="14dp"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="74dp"
+                                android:layout_gravity="bottom"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/bg_dialog_1"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.0"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/reward_count"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"
+                                        android:textColor="@color/color_title_txt"
+                                        android:textSize="22dp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:text="@string/reward_5"
+                                        android:textColor="@color/color_content_txt"
+                                        android:textSize="12dp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.0"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/reward_user_count"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"
+                                        android:textColor="@color/color_title_txt"
+                                        android:textSize="22dp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:text="@string/reward_6"
+                                        android:textColor="@color/color_content_txt"
+                                        android:textSize="12dp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/color_theme"
+                    android:orientation="vertical">
+
+                    <com.jpeng.jptabbar.PagerSlidingTabStrip
+                        android:id="@+id/reward_nts_sty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/color_content_txt"
+                        android:textSize="14sp"
+                        app:pstsDividerColor="@android:color/transparent"
+                        app:pstsIndicatorColor="@color/color_style"
+                        app:pstsIndicatorHeight="2dp"
+                        app:pstsScaleZoomMax="0.1"
+                        app:pstsShouldExpand="false"
+                        app:pstsTabPaddingLeftRight="16dp"
+                        app:pstsTextSelectedColor="@color/color_title_txt"
+                        app:pstsUnderlineColor="@android:color/transparent" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/line_color" />
+                </LinearLayout>
+
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill_vertical"
+                android:fillViewport="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/reward_vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </android.support.v4.widget.NestedScrollView>
+
+        </android.support.design.widget.CoordinatorLayout>
+    </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+
+</LinearLayout>

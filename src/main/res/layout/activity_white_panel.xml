@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f5f5f5">
+
+    <LinearLayout
+        android:id="@+id/white_panel_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.yjfshop123.live.ui.widget.StarWhitePanel2
+            android:id="@+id/painter_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:background="#ffffff" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/select_color_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/color_000000"
+                android:text="颜色"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/laser_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="画笔"
+                android:textColor="@color/color_333333"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/revoke_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="撤销"
+                android:textColor="@color/color_333333"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/clean_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="清空"
+                android:textColor="@color/color_333333"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/select_color_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="50dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/select_color_black"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="#000000"
+            android:padding="5dp" />
+
+        <ImageView
+            android:id="@+id/select_color_red"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="#cf0206"
+            android:padding="5dp" />
+
+        <ImageView
+            android:id="@+id/select_color_yellow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="#f59b00"
+            android:padding="5dp" />
+
+        <ImageView
+            android:id="@+id/select_color_green"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="#3dc25a"
+            android:padding="5dp" />
+
+        <ImageView
+            android:id="@+id/select_color_blue"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="#0029f7"
+            android:padding="5dp" />
+
+        <ImageView
+            android:id="@+id/select_color_purple"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="#8600a7"
+            android:padding="5dp" />
+    </LinearLayout>
+
+</FrameLayout>

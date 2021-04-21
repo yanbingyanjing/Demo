@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="description" content="">
+	<meta http-equiv="x-dns-prefetch-control" content="on">
+	<title>公会中心</title>
+	<script type="text/javascript" src="js/adapter.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/Tool.js"></script>
+	<script type="text/javascript" src="js/layer/layer.js"></script>
+	<link rel="stylesheet" href="css/GuildCenter.css" />
+	<link rel="stylesheet" href="css/Public.css" />
+</head>
+
+<body>
+	<div class="contents">
+		<div class="Setup"></div>
+		<div class="Join"></div>
+	</div>
+</body>
+</html>
+<script>
+
+    tokeninit(function(){
+        $.ajax({
+            headers: {
+                "XX-Token": localStorage.getItem("XX-Token"),
+                "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+            },
+            url: localStorage.getItem("domain") + 'app/guild/index',
+            type: "post",
+            dataType: 'json',
+            cache: false,
+            async: true,
+            success: function (res) {
+                if (res.code == 1) {
+                    if (res.data.user_status == 1){
+                        $(".Setup").click(function () {
+                            location.href = "shenhe.html?type=1";
+                        });
+                        $(".Join").click(function () {
+                            location.href = "shenhe.html?type=1";
+                        });
+                    }
+                    if (res.data.user_status == 2){
+                        $(".Setup").click(function () {
+                            location.href = "shenhe.html?type=2";
+                        });
+                        $(".Join").click(function () {
+                            location.href = "shenhe.html?type=2";
+                        });
+                    }
+                    if (res.data.user_status == 3){
+                        $(".Setup").click(function () {
+                            location.href = "SetGuild.html";
+                        });
+                        $(".Join").click(function () {
+                            location.href = "GuildList.html";
+                        });
+                    }
+                } else {
+                    layer.msg(res.msg);
+                }
+            },
+            error: function () {
+                layer.msg('网络异常');
+            }
+        });
+	});
+
+
+</script>

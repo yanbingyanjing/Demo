@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff"
+    android:orientation="vertical">
+
+    <include layout="@layout/xchat_header" android:visibility="gone"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:padding="10dp"
+            android:textColorHint="@color/color_999999"
+            android:textCursorDrawable="@drawable/edittext_color"
+            android:textColor="@color/color_333333"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:background="@null"
+            android:hint="@string/sq_5"
+            android:padding="10dp"
+            android:textColorHint="@color/color_999999"
+            android:textColor="@color/color_333333"
+            android:textCursorDrawable="@drawable/edittext_color"
+            android:text=""
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:id="@+id/gridLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp">
+
+            <GridView
+                android:id="@+id/pictureGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:verticalSpacing="5dp"
+                android:horizontalSpacing="5dp"
+                android:numColumns="3" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:id="@+id/cityTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@drawable/forum_create_post_location_c_ic"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/color_ffd100"
+                    android:textSize="8sp" />
+
+                <RelativeLayout
+                    android:id="@+id/nimingLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/nimingTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textSize="8sp"
+                        android:textColor="@color/color_909090"
+                        android:text="@string/sq_6" />
+
+                    <ImageView
+                        android:id="@+id/nimingImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:paddingRight="10dp"
+                        android:layout_toRightOf="@+id/nimingTxt"
+                        android:src="@drawable/forum_create_anonymity_check_n" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/biaoqing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/forum_create_post_send_smiley_g3_ic" />
+
+                <ImageView
+                    android:id="@+id/picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/biaoqing"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/forum_create_post_picture_ic" />
+
+                <ImageView
+                    android:id="@+id/video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/picture"
+                    android:src="@drawable/forum_create_post_video_ic" />
+
+
+            </RelativeLayout>
+
+            <cn.jiguang.imui.chatinput.emoji.EmojiView
+                android:id="@+id/aurora_rl_emoji_container"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

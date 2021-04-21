@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_0B0A08">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                app:elevation="0dp"
+                android:background="@color/transparent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/collapsing_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="254dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/jindan_price_bg"
+                        app:layout_collapseMode="parallax" />
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/col1_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/de_transparent"
+                        android:minHeight="50dp"
+                        app:layout_collapseMode="pin">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/status_bar_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="22dp"
+                                android:visibility="visible" />
+
+                            <RelativeLayout
+                                android:id="@+id/layout_head"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/btn_left"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="50dip"
+                                    android:paddingEnd="10dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:onClick="onHeadLeftButtonClick"
+                                    android:scaleType="center"
+
+                                    android:src="@mipmap/back_white" />
+
+                                <TextView
+                                    android:id="@+id/tv_title_center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_weight="1"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:gravity="center"
+                                    android:maxLength="20"
+                                    android:maxLines="1"
+                                    android:text="金蛋价格"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/text_right"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/selector_btn_back"
+                                    android:clickable="true"
+                                    android:gravity="center"
+
+                                    android:maxLines="1"
+                                    android:textColor="@color/color_title_txt"
+                                    android:textSize="16dp"
+                                    android:visibility="visible" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                    </android.support.v7.widget.Toolbar>
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_white_top_20"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginEnd="22dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="时间"
+                            android:textColor="@color/color_333333"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="价格"
+                            android:textColor="@color/color_333333"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="涨跌幅"
+                            android:textColor="@color/color_333333"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tip_update"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@mipmap/choujiangtixing"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="19dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@mipmap/gold_egg_logo" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="金蛋当前价格："
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:layout_below="@+id/two"
+                    />
+
+                <include layout="@layout/layout_common_empty" />
+            </RelativeLayout>
+        </android.support.design.widget.CoordinatorLayout>
+
+
+    </RelativeLayout>
+
+
+</com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>

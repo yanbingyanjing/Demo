@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		    <meta name="apple-mobile-web-app-capable" content="yes">
+		    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		    <meta name="format-detection" content="telephone=no">
+		    <meta name="description" content="">
+		    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<title>合约审核</title>
+		<script type="text/javascript" src="js/adapter.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/Tool.js"></script>
+		<script type="text/javascript" src="js/layer/layer.js"></script>
+		<link rel="stylesheet" href="css/hysh.css" />
+		<link rel="stylesheet" href="css/Public.css" />
+	</head>
+	<script>
+		(function ($) {
+		    $.fn.extend({
+		        qmTabs: function () {
+		            var aTabBodys = $('#tabs-body > div');
+		            $(this).children("li").each(function (index) {
+		                $(this).click(function () {
+		                    $(this).removeClass().addClass('tab-nav-action').siblings().removeClass().addClass('tab-nav');
+		                    aTabBodys.hide().eq(index).show();
+		                });
+		            });
+		        }
+		    });
+		})(jQuery);
+	</script>
+	<body>
+		<div class="contents">
+			<div class="header">
+				<ul class="tobar" id="tabs">
+					<li class="tab-nav tab-nav-action">签约审核</li>
+					<div class="Line"></div>
+					<li class="tab-nav">解约审核</li>
+				</ul>
+			</div>
+			<div class="tabs-body" id="tabs-body">
+				<div class="li" id="leftlist">
+					<!--<div class="photo"><img src="image/loading.png"></div>-->
+					<!--<div class="con">-->
+						<!--<div class="conLeft">-->
+							<!--<div class="name">公会成员名<span class="boy">22</span></div>-->
+							<!--<div class="info-num">-->
+								<!--<div class="fans">粉丝数：580</div>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="btns">-->
+							<!--<div class="TrueBtn">同意</div>-->
+							<!--<div class="FalseBtn">拒绝</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				</div>
+				<div class="li" style="display: none" id="rightlist">
+					<!--<div class="photo"><img src="image/loading.png"></div>-->
+					<!--<div class="con">-->
+						<!--<div class="conLeft">-->
+							<!--<div class="name">公会成员名<span class="girl">22</span></div>-->
+							<!--<div class="info-num">-->
+								<!--<div class="fans">粉丝数：580</div>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="btns">-->
+							<!--<div class="TrueBtn">同意</div>-->
+							<!--<div class="FalseBtn">拒绝</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				</div>
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+		    $(document).ready(function () {
+		        $("#tabs").qmTabs();
+		    });
+		</script>
+	</body>
+</html>
+<script>
+    tokeninit(function(){
+        $.ajax({
+            headers: {
+                "XX-Token": localStorage.getItem("XX-Token"),
+                "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+            },
+            url: localStorage.getItem("domain") + 'app/guild/signGuildUser',
+            type: "post",
+            data: { status: 1},
+            dataType: 'json',
+            cache: false,
+            async: true,
+            success: function (res) {
+                if (res.code == 1) {
+                    loadMoreUI(res.data.list,'leftlist');
+                } else {
+                    layer.msg(res.msg);
+                }
+            },
+            error: function () {
+                layer.msg('网络异常');
+            }
+        });
+        $.ajax({
+            headers: {
+                "XX-Token": localStorage.getItem("XX-Token"),
+                "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+            },
+            url: localStorage.getItem("domain") + 'app/guild/signGuildUser',
+            type: "post",
+            data: { status: 11},
+            dataType: 'json',
+            cache: false,
+            async: true,
+            success: function (res) {
+                if (res.code == 1) {
+                    loadMoreUI(res.data.list,'rightlist');
+                } else {
+                    layer.msg(res.msg);
+                }
+            },
+            error: function () {
+                layer.msg('网络异常');
+            }
+        });
+	});
+
+    function loadMoreUI(list,idname) {
+
+        var str = '';
+
+        for (obj in list) {
+            str += '<div class="photo"><img src="' + list[obj]['avatar'] + '"></div>';
+            str += '<div class="con">';
+            str += '<div class="conLeft">';
+
+            if (list[obj]['user_nickname'] == 2){
+                str += '<div class="name">' + list[obj]['user_nickname'] + '<span class="girl">' + list[obj]['age'] + '</span></div>';
+			} else {
+                str += '<div class="name">' + list[obj]['user_nickname'] + '<span class="boy">' + list[obj]['age'] + '</span></div>';
+			}
+
+            str += '<div class="info-num">';
+            str += '<div class="fans">粉丝数：' + list[obj]['fansnum'] + '</div>';
+            str += '</div>';
+            str += '</div>';
+            str += '<div class="btns">';
+            if (idname == 'leftlist'){
+                str += '<div class="TrueBtn" onclick="audit(' + list[obj]['user_id'] + ',2)">同意</div>';
+                str += '<div class="FalseBtn" onclick="audit(' + list[obj]['user_id'] + ',10)">拒绝</div>';
+			} else {
+                str += '<div class="TrueBtn" onclick="audit(' + list[obj]['user_id'] + ',11)">同意</div>';
+                str += '<div class="FalseBtn" onclick="audit(' + list[obj]['user_id'] + ',2)">拒绝</div>';
+			}
+
+            str += '</div>';
+            str += '</div>';
+            str += '</div>';
+        };
+        str += '<div><span style="text-align: center;width: 100%;display: block;font-size: 14px;color:grey">暂无更多数据</span></div>';
+        $("#"+idname).append(str);
+    };
+
+    function audit(user_id,status){
+        $.ajax({
+            headers: {
+                "XX-Token": localStorage.getItem("XX-Token"),
+                "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+            },
+            url: localStorage.getItem("domain") + 'app/guild/examineAddGuildUser',
+            type: "post",
+            data: { status: status,user_id:user_id},
+            dataType: 'json',
+            cache: false,
+            async: true,
+            success: function (res) {
+                if (res.code == 1) {
+                    layer.msg('操作成功');
+                    setInterval(function(){
+                        location.reload();
+                    },1000)
+                } else {
+                    layer.msg(res.msg);
+                }
+            },
+            error: function () {
+                layer.msg('网络异常');
+            }
+        });
+	}
+</script>

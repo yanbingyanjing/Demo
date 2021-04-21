@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		    <meta name="apple-mobile-web-app-capable" content="yes">
+		    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		    <meta name="format-detection" content="telephone=no">
+		    <meta name="description" content="">
+		    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<title>我的公会</title>
+		<script type="text/javascript" src="js/adapter.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/Tool.js"></script>
+		<link rel="stylesheet" href="css/PerCenter.css" />
+		<script type="text/javascript" src="js/layer/layer.js"></script>
+		<link rel="stylesheet" href="css/Public.css" />
+		<style>
+			.layui-layer-btn-{
+				height: 40px;
+			}
+			.layui-layer-btn a{
+				font-size: 14px;
+			}
+			.tortop{
+				margin-bottom: 0px;
+				border-radius:0.1rem 0.1rem 0 0;
+			}
+			.torbottom{
+				margin-top: 0px;
+				border-radius:0 0 0.1rem 0.1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="contents">
+			<div class="header">
+				<div class="photo"><img src="image/loading.png" id="icon"></div>
+				<div class="percenter">
+					<div class="percenter-name"></div>
+					<div class="percenter-id"></div>
+				</div>
+				<!--<div class="remove-btn">解除签约</div>-->
+			</div>
+			<div class="wapper">
+				<div class="list">
+					<div class="list-name">公会会长</div>
+					<div class="list-con" id="huizhangname"></div>
+				</div>
+				<div class="list" id="changchoucheng">
+					<div class="list-name">公会抽成</div>
+					<div class="list-con choucheng" id="choucheng"></div>
+				</div>
+				<div class="li">
+					<div class="list jianjie">
+						<div class="list-name">公会简介</div>
+						<div class="list-con choucheng"></div>
+					</div>
+					<p id="desc"></p>
+				</div>
+			</div>
+			<div class="torbar tortop">
+				<div class="torbarLi ghcy">
+					<div class="torbarLi-pic"></div>
+					<div class="torbarLi-tit">公会成员</div>
+				</div>
+				<div class="torbarLi zbsj">
+					<div class="torbarLi-pic pic2"></div>
+					<div class="torbarLi-tit">主播数据</div>
+				</div>
+				<div class="torbarLi ghyl">
+					<div class="torbarLi-pic pic3"></div>
+					<div class="torbarLi-tit">公会盈利</div>
+				</div>
+				<div class="torbarLi hysh">
+					<div class="torbarLi-pic pic4"></div>
+					<div class="torbarLi-tit">合约审核</div>
+				</div>
+			</div>
+			<div class="torbar torbottom">
+				<div class="torbarLi ghqb">
+					<div class="torbarLi-pic" style="background: url(./image/gonghuiqianbao.png) no-repeat;background-size: contain"></div>
+					<div class="torbarLi-tit">公会提现</div>
+				</div>
+				<div class="torbarLi txmx">
+					<div class="torbarLi-pic" style="background: url(./image/tixianrecord.png) no-repeat;background-size: contain"></div>
+					<div class="torbarLi-tit">提现明细</div>
+				</div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $(".ghcy").click(function(){
+            location.href="GuildPeople.html"
+        });
+        $(".zbsj").click(function(){
+            location.href="AnchorsNum.html"
+        });
+        $(".ghyl").click(function(){
+            location.href="GuildMoney.html"
+        });
+        $(".hysh").click(function(){
+            location.href="hysh.html"
+        });
+        $(".jianjie").click(function(){
+            location.href="Textarea.html"
+        });
+        $(".txmx").click(function(){
+            location.href="TixianRecord.html"
+        });
+        $("#changchoucheng").click(function(){
+            layer.prompt({title: '抽成比率编辑', formType: 3}, function(pass, index){
+                $.ajax({
+                    headers: {
+                        "XX-Token": localStorage.getItem("XX-Token"),
+                        "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+                    },
+                    url: localStorage.getItem("domain") + 'app/guild/updateGuild',
+                    type: "post",
+                    data: {divide_into:pass},
+                    dataType: 'json',
+                    cache: false,
+                    async: true,
+                    success: function (res) {
+                        if (res.code == 1) {
+                            layer.msg('抽成编辑成功');
+                            $('#choucheng').html(pass + '%');
+                        } else {
+                            layer.msg(res.msg);
+                        }
+                    },
+                    error: function () {
+                        layer.msg('网络异常');
+                    }
+                });
+                layer.close(index);
+            });
+            $(".layui-layer-input").blur();
+        });
+        $(".ghqb").click(function(){
+            var json = {
+                param: {name:'WithdrawalVC','type':3},
+                callback: "openNative",
+            };
+            noticeNative(json);
+        });
+    })
+    tokeninit(function () {
+        $.ajax({
+            headers: {
+                "XX-Token": localStorage.getItem("XX-Token"),
+                "XX-Device-Type": localStorage.getItem("XX-Device-Type")
+            },
+            url: localStorage.getItem("domain") + 'app/guild/getGuildInfoByuser',
+            type: "post",
+            data: {},
+            dataType: 'json',
+            cache: false,
+            async: true,
+            success: function (res) {
+                if (res.code == 1) {
+                    $('.percenter-name').html(res.data.name);
+                    $('.percenter-id').html('ID:' + res.data.id);
+                    $('#huizhangname').html(res.data.user_nickname);
+                    $('#choucheng').html(res.data.divide_into + '%');
+                    $('#desc').html(res.data.desc);
+                    $('#icon').attr('src',res.data.icon);
+                } else {
+                    layer.msg(res.msg);
+                }
+            },
+            error: function () {
+                layer.msg('网络异常');
+            }
+        });
+    })
+</script>

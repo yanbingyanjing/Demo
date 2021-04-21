@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:background="@drawable/bg_dialog_show_img"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="24dp">
+
+    <ImageView
+        android:id="@+id/logoutLayout"
+        android:layout_width="85dp"
+        android:layout_marginStart="91dp"
+        android:layout_marginEnd="91dp"
+        android:layout_height="67dp"
+        android:src="@mipmap/to_exchange_logo" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:gravity="center"
+        android:text="@string/go_to_exchange"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/line_one"
+        android:layout_marginTop="14dp"
+        android:background="@color/color_201f1d" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/confir"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:text="@string/confirm"
+            android:textColor="@color/color_999999"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:id="@+id/line_two"
+            android:background="@color/color_201f1d" />
+
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:text="@string/btn_cancel"
+            android:textColor="@color/color_A98344"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

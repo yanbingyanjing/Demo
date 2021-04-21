@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:voisePlayingIconAttr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/layout_live_item_fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+            android:id="@+id/layout_live_item_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:sriv_left_bottom_corner_radius="4dip"
+            app:sriv_left_top_corner_radius="4dip"
+            app:sriv_right_bottom_corner_radius="4dip"
+            app:sriv_right_top_corner_radius="4dip" />
+
+        <LinearLayout
+            android:id="@+id/live_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/_corners_shape"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingTop="3dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="3dp">
+
+            <com.yjfshop123.live.ui.widget.VoisePlayingIcon
+                android:id="@+id/layout_live_item_vpi"
+                android:layout_width="16dp"
+                android:layout_height="10dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp"
+                android:background="@null"
+                android:visibility="gone"
+                voisePlayingIconAttr:pointer_color="@android:color/white"
+                voisePlayingIconAttr:pointer_num="4"
+                voisePlayingIconAttr:pointer_width="1.6" />
+
+            <TextView
+                android:id="@+id/layout_live_item_look"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="0人"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/_corners_shape"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingTop="3dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="3dp">
+
+            <Button
+                android:id="@+id/layout_live_item_btn"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/_point_"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/layout_live_item_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/_mm_xx"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <TextView
+                android:id="@+id/layout_live_item_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="10dp" />
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

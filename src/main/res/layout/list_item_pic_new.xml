@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_fefdf3_2"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/wenzi"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@mipmap/wenzi"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/community_item_img_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+            android:id="@+id/community_item_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:sriv_left_bottom_corner_radius="2dip"
+            app:sriv_left_top_corner_radius="2dip"
+            app:sriv_right_bottom_corner_radius="2dip"
+            app:sriv_right_top_corner_radius="2dip" />
+
+        <ImageView
+            android:id="@+id/video"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@mipmap/bofang"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/community_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.2"
+        android:maxLines="2"
+        android:text="标题"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.yjfshop123.live.server.widget.CircleImageView
+            android:id="@+id/community_item_portrait"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/community_item_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="昵称"
+            android:textColor="@color/color_999999"
+            android:textSize="10sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/zan_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:gravity="center_vertical"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/zan"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@mipmap/xiaoxinxin" />
+
+            <TextView
+                android:id="@+id/zan_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:textColor="@color/color_999999"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pinglun_ll"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/pinglun"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@mipmap/pinglun_new" />
+
+            <TextView
+                android:id="@+id/pinglun_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:textColor="@color/color_999999"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

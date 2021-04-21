@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/task_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/bg_gradient_5e5e5e_242320_8"
+    android:orientation="horizontal"
+    android:padding="14dp">
+
+    <com.yjfshop123.live.server.widget.SelectableRoundedImageView
+        android:id="@+id/day_task_img"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center_vertical"
+        app:sriv_left_bottom_corner_radius="6dip"
+        app:sriv_left_top_corner_radius="6dip"
+        app:sriv_right_bottom_corner_radius="6dip"
+        app:sriv_right_top_corner_radius="6dip" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/look_shipin"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/iscomplete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_404040_13"
+                android:paddingStart="17dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="17dp"
+                android:paddingBottom="5dp"
+                android:text="@string/quwancheng"
+
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/jindu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="23dp"
+            android:textColor="@color/color_C5A364"
+            android:textSize="12sp"
+
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minWidth="60dp"
+            android:paddingEnd="23dp"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:minWidth="60dp"
+            android:paddingEnd="23dp"
+            android:textColor="@color/color_CECECD"
+            android:textSize="10sp"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:background="@drawable/shape_video_bottom_mask"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.yjfshop123.live.ui.widget.shimmer.VerticalSwipeRefreshLayout>
+
+    <ImageView
+        android:id="@+id/player_iv_pause"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/icon_video_play"
+        android:visibility="gone" />
+
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0dp"
+        android:background="@null"
+        android:max="100"
+        android:maxHeight="0.5dp"
+        android:minHeight="0.5dp"
+        android:paddingStart="0dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp"
+        android:progress="0"
+        android:progressDrawable="@drawable/video_seek_progress_2"
+        android:thumb="@drawable/video_seek_thumb_2" />
+
+    <include layout="@layout/layout_common_empty" />
+
+    <ImageView
+        android:id="@+id/community_video_back_"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:src="@drawable/mm_back" />
+
+    <ImageView
+        android:id="@+id/community_video_more_"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_short_video_detail_more_white" />
+
+</FrameLayout>

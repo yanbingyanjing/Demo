@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FAF8EB"
+    android:orientation="vertical">
+    <!--    android:background="@drawable/bg_my"-->
+    <!--    android:orientation="vertical">-->
+
+    <View
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="22dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/community_search"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:padding="14dp"
+            android:src="@drawable/conversation_search" />
+
+        <TextView
+            android:id="@+id/community_xchat_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/quanzi"
+            android:textColor="@color/color_333333"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <com.jpeng.jptabbar.PagerSlidingTabStrip
+                android:id="@+id/community_nts_sty"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/color_999999"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:pstsDividerColor="@android:color/transparent"
+                app:pstsDividerPaddingTopBottom="5dp"
+                app:pstsIndicatorColor="@color/color_B28D51"
+                app:pstsIndicatorHeight="2dp"
+                app:pstsScaleZoomMax="0.2"
+                app:pstsShouldExpand="false"
+                app:pstsTabPaddingLeftRight="10dp"
+                app:pstsTextSelectedColor="@color/color_333333"
+                app:pstsUnderlineColor="@android:color/transparent" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/community_reply"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="41dp"
+            android:padding="7dp"
+
+            android:src="@drawable/community_reply" />
+
+        <ImageView
+            android:id="@+id/community_release"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="5dp"
+            android:padding="8dp"
+            android:src="@drawable/add_video_icon" />
+
+        <TextView
+            android:id="@+id/community_unread_num"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:minWidth="16dp"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:visibility="invisible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/transparent" />
+    </FrameLayout>
+
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/community_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+
+
+</LinearLayout>

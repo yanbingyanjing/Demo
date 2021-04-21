@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		    <meta name="apple-mobile-web-app-capable" content="yes">
+		    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		    <meta name="format-detection" content="telephone=no">
+		    <meta name="description" content="">
+		    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<title>审核</title>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/adapter.js"></script>
+		<script type="text/javascript" src="js/Tool.js"></script>
+		<link rel="stylesheet" href="css/Public.css" />
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.contents{
+			width: 100%;
+			background-color: #fff;
+		}
+		.image{
+			width: 2.79rem;
+			height: 2.79rem;
+			border-radius:50% ;
+			margin: 1.73rem auto 0.73rem;
+		}
+		.image img{
+			width: 100%;
+			height: 100%;
+		}
+		.text{
+			font-size: 0.36rem;
+			color: #353535;
+			text-align: center;
+			font-family: "microsoft yahei";
+			letter-spacing: 0.07rem;
+		}
+	</style>
+	<body>
+		<div class="contents">
+			<div class="image"><img src="image/shenheNo.png" id="img"></div>
+			<div class="text"></div>
+		</div>
+	</body>
+</html>
+<script>
+    if(getQueryVariable('type') == 1){
+        $('.text').html('公会创建成功,审核中!');
+	}
+    if(getQueryVariable('type') == 2){
+        $('.text').html('已提交加入申请,会长审核中!');
+    }
+</script>
